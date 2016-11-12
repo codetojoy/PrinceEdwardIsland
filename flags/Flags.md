@@ -1,2 +1,15 @@
-# TODO
+
+#### Flags
+
+At the Remembrance Day ceremony in Charlottetown on November 11, 2016, there were eleven flag-bearers. For several years, I have wanted to learn more about these flags, as some are not familiar (to me).
+
+This is page is intended as a small tribute to men and women who serve (and have served) our country, (If there is an error, please email codetojoy @t gmail com)
+
+#### Can you guess these flags? (click on image for answer)
+
+|         |         |         |         |
+|:-------:|:-------:|:-------:|:-------:|
+| <a href="https://en.wikipedia.org/wiki/Flag_of_Canada"> <img src="https://upload.wikimedia.org/wikipedia/en/thumb/c/cf/Flag_of_Canada.svg/1280px-Flag_of_Canada.svg.png" height="100" width="200"></img> </a> | <a href="https://en.wikipedia.org/wiki/Canadian_Armed_Forces"> <img src="https://upload.wikimedia.org/wikipedia/commons/c/c6/Canadian_Forces_Flag.svg" height="100" width="200"></img> </a> | <a href="https://en.wikipedia.org/wiki/Canadian_Naval_Ensign"> <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Naval_Ensign_of_Canada.svg" height="100" width="200"></img> </a> | <a href="https://en.wikipedia.org/wiki/Canadian_Red_Ensign"> <img src="https://upload.wikimedia.org/wikipedia/commons/d/da/Canadian_Red_Ensign_%281957-1965%29.svg" height="100" width="200"></img> </a> |
+| <a href="https://en.wikipedia.org/wiki/Charlottetown"> <img src="https://upload.wikimedia.org/wikipedia/commons/f/f6/Flag_of_Charlottetown.svg" height="100" width="200"></img> </a> | <a href="https://en.wikipedia.org/wiki/Flag_of_NATO"> <img src="https://upload.wikimedia.org/wikipedia/commons/3/37/Flag_of_NATO.svg" height="100" width="200"></img> </a> |  <a href="https://en.wikipedia.org/wiki/Royal_Canadian_Air_Force_Ensign"> <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/Royal_Canadian_Air_Force_ensign.svg" height="100" width="200"></img> </a> |  <a href="http://www.legion.ca/who-we-are/ritual-and-awards/flag-protocol"> <img src="http://www.legion.ca/wp-content/uploads/2014/05/LegionBanner-370x245.jpg" height="100" width="200"></img> </a> | 
+| <a href="https://en.wikipedia.org/wiki/Royal_Canadian_Mounted_Police"> <img src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Flag_of_the_RCMP.svg" height="100" width="200"></img> </a> | <a href="https://en.wikipedia.org/wiki/Union_Jack"> <img src="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg" height="100" width="200"></img> </a> | <a href="https://en.wikipedia.org/wiki/Flag_of_the_United_Nations"> <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Flag_of_the_United_Nations.svg" height="100" width="200"></img> </a> | |
 
