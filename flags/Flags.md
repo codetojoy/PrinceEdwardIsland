@@ -1,13 +1,13 @@
 
 #### Flags
 
-At the Remembrance Day ceremony in Charlottetown on November 11, 2016, there were eleven flag-bearers. For several years, I have wanted to learn more about these flags, as some are not familiar (to me).
+At the Remembrance Day ceremony in Charlottetown on November 11, 2016, there were several flag-bearers. For several years, I have wanted to learn more about these flags, as a few were not familiar (to me).
 
 This is page is intended as a modest tribute to men and women who serve (and have served) our country. (If there is an error, please email codetojoy @t gmail com). 
 
-*Error #1: after posting to Twitter, I realized that, of course, the flag of Prince Edward Island was present (but not shown here). My count may be off.*
+*Error #1: after posting to Twitter, I realized that, of course, the flag of Prince Edward Island was present (but not shown here).*
 
-#### Can you guess these flags? (click on image for answer)
+#### Sure, some are obvious, but can you guess all of these flags? (click on image for answer)
 
 |         |         |         |         |
 |:-------:|:-------:|:-------:|:-------:|
