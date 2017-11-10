@@ -1,9 +1,10 @@
 
 #### Flags
 
-At the Remembrance Day ceremony in Charlottetown on November 11, 2016, there were several flag-bearers. For several years, I have wanted to learn more about these flags, as a few were not familiar (to me). Image credits [here](https://github.com/codetojoy/PrinceEdwardIsland/blob/master/flags/Attribution.md).
+At the Remembrance Day ceremony in Charlottetown on November 11, 2016, there were several flag-bearers. For several years, I have wanted to learn more about these flags, as a few were not familiar (to me). 
 
-This is page is intended as a modest tribute to men and women who serve (and have served) our country. (If there is an error, please email codetojoy @t gmail com). 
+This is page is intended as a modest tribute to men and women who serve (and have served) our country. (If there is an error, please email codetojoy @t gmail com). Image credits [here](https://github.com/codetojoy/PrinceEdwardIsland/blob/master/flags/Attribution.md).
+
 
 #### Sure, some are obvious, but can you guess all of these flags? (click on image for answer)
 
