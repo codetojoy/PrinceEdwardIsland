@@ -1,7 +1,7 @@
 
 <p>
 <a href="https://en.wikipedia.org/wiki/Canadian_Armed_Forces"> 
-    <img src="https://en.wikipedia.org/wiki/Canadian_Armed_Forces#/media/File:Flag_of_the_Canadian_Forces.svg"
+    <img src="https://github.com/codetojoy/PrinceEdwardIsland/blob/master/flags/resources/Air_Force_Ensign_of_Canada.svg"
          height="100" width="200"></img> 
     </a> 
 </p>
