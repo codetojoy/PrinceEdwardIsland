@@ -5,8 +5,6 @@ At the Remembrance Day ceremony in Charlottetown on November 11, 2016, there wer
 
 This is page is intended as a modest tribute to men and women who serve (and have served) our country. (If there is an error, please email codetojoy @t gmail com). 
 
-*Error #1: after posting to Twitter, I realized that there must have been 12 flags, as I originally missed a rather obvious one. Fixed.*
-
 #### Sure, some are obvious, but can you guess all of these flags? (click on image for answer)
 
 |         |         |         |         |
