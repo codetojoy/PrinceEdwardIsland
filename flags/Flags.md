@@ -6,7 +6,7 @@ At the Remembrance Day ceremony in Charlottetown on November 11, 2016, there wer
 This is page is intended as a modest tribute to men and women who serve (and have served) our country. (If there is an error, please email codetojoy @t gmail com). Image credits [here](https://github.com/codetojoy/PrinceEdwardIsland/blob/master/flags/Attribution.md).
 
 
-#### Sure, some are obvious, but can you guess all of these flags? (click on image for answer)
+#### Some are obvious, and all are easy for vexillophiles, but try and guess each flag. (click on image for answer)
 
 |         |         |         |         |
 |:-------:|:-------:|:-------:|:-------:|
