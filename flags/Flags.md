@@ -3,7 +3,7 @@
 
 At the Remembrance Day ceremony in Charlottetown on November 11, 2016, there were several flag-bearers. For several years, I have wanted to learn more about these flags, as a few were not familiar (to me). 
 
-This is page is intended as a modest tribute to men and women who serve (and have served) our country. (If there is an error, please email codetojoy @t gmail com). Image credits [here](https://github.com/codetojoy/PrinceEdwardIsland/blob/master/flags/Attribution.md).
+This is page is intended as a modest tribute to those who serve (and have served) our country. (If there is an error, please email codetojoy @t gmail com). Image credits [here](https://github.com/codetojoy/PrinceEdwardIsland/blob/master/flags/Attribution.md).
 
 
 #### Some are obvious, and all are easy for vexillophiles, but try and guess each flag. (click on image for answer)
