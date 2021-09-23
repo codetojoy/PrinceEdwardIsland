@@ -2,6 +2,6 @@
 
 set -e
 
-cp ../zodiac.json . 
+cp ../src/json_generator/zodiac.json . 
 
 python3 -m http.server
