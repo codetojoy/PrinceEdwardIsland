@@ -2,7 +2,7 @@
     "name": "zodiac",
     "children": [
         {
-            "name": "aries",
+            "name": "Aries \u2648",
             "children": [
                 {
                     "name": "Sonny Gallant",
@@ -12,7 +12,7 @@
             ]
         },
         {
-            "name": "taurus",
+            "name": "Taurus \u2649",
             "children": [
                 {
                     "name": "N/A",
@@ -22,7 +22,7 @@
             ]
         },
         {
-            "name": "gemini",
+            "name": "Gemini \u264a",
             "children": [
                 {
                     "name": "Hon. Peter Bevan-Baker",
@@ -37,7 +37,7 @@
             ]
         },
         {
-            "name": "cancer",
+            "name": "Cancer \u264b",
             "children": [
                 {
                     "name": "Robert Henderson",
@@ -47,7 +47,7 @@
             ]
         },
         {
-            "name": "leo",
+            "name": "Leo \u264c",
             "children": [
                 {
                     "name": "Hannah Bell",
@@ -57,7 +57,7 @@
             ]
         },
         {
-            "name": "virgo",
+            "name": "Virgo \u264d",
             "children": [
                 {
                     "name": "N/A",
@@ -67,7 +67,7 @@
             ]
         },
         {
-            "name": "libra",
+            "name": "Libra \u264e",
             "children": [
                 {
                     "name": "N/A",
@@ -77,7 +77,7 @@
             ]
         },
         {
-            "name": "scorpio",
+            "name": "Scorpio \u264f",
             "children": [
                 {
                     "name": "Hon. Dennis King",
@@ -102,17 +102,17 @@
             ]
         },
         {
-            "name": "saggitarius",
+            "name": "Sagittarius \u2650",
             "children": [
                 {
-                    "name": "N/A",
-                    "party": "N/A",
+                    "name": "Hon. Steven Myers",
+                    "party": "PC",
                     "size": 1000
                 }
             ]
         },
         {
-            "name": "capricorn",
+            "name": "Capricorn \u2651",
             "children": [
                 {
                     "name": "Hon. Brad Trivers",
@@ -122,7 +122,7 @@
             ]
         },
         {
-            "name": "aquarius",
+            "name": "Aquarius \u2652",
             "children": [
                 {
                     "name": "Hon. Darlene Compton",
@@ -132,7 +132,7 @@
             ]
         },
         {
-            "name": "pisces",
+            "name": "Pisces \u2653",
             "children": [
                 {
                     "name": "N/A",
