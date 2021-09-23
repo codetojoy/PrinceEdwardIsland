@@ -15,7 +15,7 @@
   }
 
   .label {
-    font: 11px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font: 24px "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-anchor: middle;
     text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;
   }
@@ -37,7 +37,7 @@
   var color = d3
     .scaleLinear()
     .domain([-1, 5])
-    .range(["hsl(152,80%,80%)", "hsl(228,30%,40%)"])
+    .range(["hsl(61,80%,80%)", "hsl(80,30%,40%)"])
     .interpolate(d3.interpolateHcl);
 
   var pack = d3
@@ -70,7 +70,21 @@
         return d.parent ? (d.children ? "node" : "node node--leaf") : "node node--root";
       })
       .style("fill", function (d) {
-        return d.children ? color(d.depth) : null;
+        var result = null;
+        if (d.children) {
+          result = color(d.depth);
+        } else {
+          if (d.data.party === "Green") {
+            result = d3.hsl("green");
+          } else if (d.data.party === "Liberal") {
+            result = d3.hsl("red");
+          } else if (d.data.party === "NDP") {
+            result = d3.hsl("orange");
+          } else if (d.data.party === "PC") {
+            result = d3.hsl("blue");
+          }
+        }
+        return result;
       })
       .on("click", function (d) {
         if (focus !== d) zoom(d), d3.event.stopPropagation();
