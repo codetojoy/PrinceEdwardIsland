@@ -47,25 +47,14 @@ class Runner {
         { "name": "Person a-XYZ", "size": 1000 }
       ]
     },
-
-      "name": "aries",
-      "name": "taurus",
-      "name": "gemini",
-      "name": "cancer",
-      "name": "leo",
-      "name": "virgo",
-      "name": "libra",
-      "name": "scorpio",
-      "name": "saggitarius",
-      "name": "capricorn",
-      "name": "aquarius",
-      "name": "pisces",
     */
 
-    def buildChildrenForSign(def infos, def sign) {
+    def buildChildrenForSign(def infos, def displaySign) {
         def children = []
+        def signs = new Signs()
         infos.each { info ->
-            if (info.zodiac.trim().toUpperCase() == sign.trim().toUpperCase()) {
+            def thisDisplaySign = signs.getDisplaySign(info.zodiac)
+            if (thisDisplaySign == displaySign) {
                 def person = [:]
                 person["name"] = info.name
                 person["party"] = info.party
@@ -80,22 +69,8 @@ class Runner {
     }
 
     def buildChildren(def infos) {
-        final signs = [
-            "aries",
-            "taurus",
-            "gemini",
-            "cancer",
-            "leo",
-            "virgo",
-            "libra",
-            "scorpio",
-            "saggitarius",
-            "capricorn",
-            "aquarius",
-            "pisces"
-        ]
         def children = []
-        signs.each { sign ->
+        Signs.DISPLAY_SIGNS.each { sign ->
             def childMap = [:]
             childMap["name"] = sign
             childMap["children"] = buildChildrenForSign(infos, sign)
@@ -105,22 +80,8 @@ class Runner {
     }
 
     def buildTestChildren() {
-        final signs = [
-            "aries",
-            "taurus",
-            "gemini",
-            "cancer",
-            "leo",
-            "virgo",
-            "libra",
-            "scorpio",
-            "saggitarius",
-            "capricorn",
-            "aquarius",
-            "pisces"
-        ]
         def children = []
-        signs.each { sign ->
+        Signs.DATA_SIGNS.each { sign ->
             def childMap = [:]
             childMap["name"] = sign
             // { "name": "Person a-ABC", "size": 1000 },
