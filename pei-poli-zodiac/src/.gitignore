@@ -1,3 +1,4 @@
+**/.gradle
 **/build
 **/staging
 ./json_generator/zodiac.json
