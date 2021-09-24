@@ -2,7 +2,7 @@
     "name": "zodiac",
     "children": [
         {
-            "name": "Aries \u2648",
+            "name": "Aries",
             "children": [
                 {
                     "name": "Sonny Gallant",
@@ -12,7 +12,7 @@
             ]
         },
         {
-            "name": "Taurus \u2649",
+            "name": "Taurus",
             "children": [
                 {
                     "name": "N/A",
@@ -22,7 +22,7 @@
             ]
         },
         {
-            "name": "Gemini \u264a",
+            "name": "Gemini",
             "children": [
                 {
                     "name": "Hon. Peter Bevan-Baker",
@@ -37,7 +37,7 @@
             ]
         },
         {
-            "name": "Cancer \u264b",
+            "name": "Cancer",
             "children": [
                 {
                     "name": "Robert Henderson",
@@ -47,7 +47,7 @@
             ]
         },
         {
-            "name": "Leo \u264c",
+            "name": "Leo",
             "children": [
                 {
                     "name": "Hannah Bell",
