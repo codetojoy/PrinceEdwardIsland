@@ -1,5 +1,0 @@
-**/.gradle
-**/build
-**/staging
-./json_generator/zodiac.json
-./json_generator/zodiac.csv
