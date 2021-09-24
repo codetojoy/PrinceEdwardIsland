@@ -2,7 +2,7 @@
 package net.codetojoy.system
 
 class Signs {
-  final static def DISPLAY_SIGNS = [
+  static final def DISPLAY_SIGNS = [
             "Aries", //  ♈",
             "Taurus", //  ♉",
             "Gemini", //  ♊",
@@ -15,9 +15,12 @@ class Signs {
             "Capricorn", //  ♑",
             "Aquarius", //  ♒",
             "Pisces", //  ♓"
+	    "Unknown",
         ]
 
-  final static def DATA_SIGNS = [
+  static final def UNKNOWN_DATA_SIGN = "unknown"
+
+  static final def DATA_SIGNS = [
             "aries",
             "taurus",
             "gemini",
@@ -29,14 +32,16 @@ class Signs {
             "sagittarius",
             "capricorn",
             "aquarius",
-            "pisces"
-        ]
+            "pisces",
+	    UNKNOWN_DATA_SIGN
+  ]
 
   def getDisplaySign(def dataSign) {
     def target = dataSign.trim().toUpperCase()
+
     def index = DATA_SIGNS.findIndexOf{ it.trim().toUpperCase() == target }
     if (index >= 0) {
-	return DISPLAY_SIGNS[index]
+        return DISPLAY_SIGNS[index]
     } else {
 	throw new IllegalStateException("internal error for '$dataSign' : $index")
     }

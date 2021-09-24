@@ -2,6 +2,7 @@
 package net.codetojoy.custom
 
 import net.codetojoy.utils.Utils
+import net.codetojoy.system.Signs
 
 class InfoMapper {
     static final def INDEX_NAME = 0
@@ -27,7 +28,9 @@ class InfoMapper {
                                 birthday: birthday, riding: riding,
                                 party: party, hasSign: true)
             } else {
-                // System.err.println "TRACER: skipping " + line
+                info = new Info(name: name, zodiac: Signs.UNKNOWN_DATA_SIGN,
+                                birthday: birthday, riding: riding,
+                                party: party, hasSign: false)
             }
         } catch(Exception ex) {
             System.err.println("TRACER caught ex : ${ex.message}")
