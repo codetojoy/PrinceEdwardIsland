@@ -15,8 +15,8 @@
             "name": "Taurus",
             "children": [
                 {
-                    "name": "N/A",
-                    "party": "N/A",
+                    "name": "None identified (yet)",
+                    "party": "unknown",
                     "size": 1000
                 }
             ]
@@ -27,12 +27,12 @@
                 {
                     "name": "Hon. Peter Bevan-Baker",
                     "party": "Green",
-                    "size": 1000
+                    "size": 500
                 },
                 {
                     "name": "Hon. Jamie Fox",
                     "party": "PC",
-                    "size": 1000
+                    "size": 500
                 }
             ]
         },
@@ -60,8 +60,8 @@
             "name": "Virgo",
             "children": [
                 {
-                    "name": "N/A",
-                    "party": "N/A",
+                    "name": "None identified (yet)",
+                    "party": "unknown",
                     "size": 1000
                 }
             ]
@@ -70,8 +70,8 @@
             "name": "Libra",
             "children": [
                 {
-                    "name": "N/A",
-                    "party": "N/A",
+                    "name": "None identified (yet)",
+                    "party": "unknown",
                     "size": 1000
                 }
             ]
@@ -82,22 +82,22 @@
                 {
                     "name": "Hon. Dennis King",
                     "party": "PC",
-                    "size": 1000
+                    "size": 250
                 },
                 {
                     "name": "Hon. Colin LaVie",
                     "party": "PC",
-                    "size": 1000
+                    "size": 250
                 },
                 {
                     "name": "Sidney MacEwen",
                     "party": "PC",
-                    "size": 1000
+                    "size": 250
                 },
                 {
                     "name": "Hal Perry",
                     "party": "Liberal",
-                    "size": 1000
+                    "size": 250
                 }
             ]
         },
@@ -135,8 +135,8 @@
             "name": "Pisces",
             "children": [
                 {
-                    "name": "N/A",
-                    "party": "N/A",
+                    "name": "None identified (yet)",
+                    "party": "unknown",
                     "size": 1000
                 }
             ]

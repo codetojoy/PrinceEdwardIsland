@@ -19,22 +19,38 @@ import groovy.json.*
 */
 
 class JsonBuilder {
+    static final def NAME = "name"
+    static final def PARTY = "party"
+    static final def SIZE = "size"
+    static final def NONE = "None identified (yet)"
+    static final def DEFAULT_SIZE = 1000
+    static final def UNKNOWN_SIGN = "unknown"
+
+    def getSizeForSign(def infos, def sign) {
+        def result = DEFAULT_SIZE
+        def count = infos.findAll{ it.zodiac == sign}.size()
+        result = result / count
+        return result
+    }
+
+    def buildUnknown() {
+        return ["$NAME": NONE, "$PARTY": UNKNOWN_SIGN, "$SIZE": DEFAULT_SIZE]
+    }
 
     def buildChildrenForSign(def infos, def displaySign) {
         def children = []
-        def signs = new Signs()
         infos.each { info ->
-            def thisDisplaySign = signs.getDisplaySign(info.zodiac)
+            def thisDisplaySign = new Signs().getDisplaySign(info.zodiac)
             if (thisDisplaySign == displaySign) {
                 def person = [:]
-                person["name"] = info.name
-                person["party"] = info.party
-                person["size"] = 1000
+                person[NAME] = info.name
+                person[PARTY] = info.party
+                person[SIZE] = getSizeForSign(infos, info.zodiac)
                 children << person
             }
         }
         if (children.isEmpty()) {
-            children << ["name": "N/A", "party": "N/A", "size": 1000]
+            children << buildUnknown()
         }
         return children
     }
