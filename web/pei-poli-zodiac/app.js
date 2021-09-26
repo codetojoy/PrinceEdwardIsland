@@ -1,6 +1,7 @@
 // ----------
 
-const JSON_FILE = "./zodiac.json";
+const KNOWN_JSON = "./zodiac.json";
+// const UNKNOWN_JSON = "./zodiac-unknown.json";
 const BACKGROUND_LIGHT = "hsl(61,80%,80%)";
 const BACKGROUND_DARK = "hsl(80,30%,40%)";
 const BACKGROUND_RANGE = [BACKGROUND_LIGHT, BACKGROUND_DARK];
@@ -11,6 +12,9 @@ const NDP_PARTY = "NDP";
 const PC_PARTY = "PC";
 const UNKNOWN_PARTY = "Unknown";
 
+const NUM_SIBLINGS_FOR_SMALL_TEXT = 4;
+const NUM_CHARS_FOR_TINY_TEXT = 14;
+
 // ----------
 
 function getFillColor(d) {
@@ -19,6 +23,7 @@ function getFillColor(d) {
     if (d.data.name === UNKNOWN_PARTY) {
       result = d3.color("white");
     } else {
+      let color = d3.scaleLinear().domain([-1, 5]).range(BACKGROUND_RANGE).interpolate(d3.interpolateHcl);
       result = color(d.depth);
     }
   } else {
@@ -41,113 +46,272 @@ function getFillColor(d) {
   return result;
 }
 
+function hasManyChildren(d) {
+  let result = false;
+  let isLeaf = d.data.children == null;
+  if (isLeaf && d.parent && d.parent.data && d.parent.data.children) {
+    let numNodes = d.parent.data.children.length;
+    result = numNodes >= NUM_SIBLINGS_FOR_SMALL_TEXT;
+  }
+  return result;
+}
+
+function getTransform(d) {
+  let result = "rotate(45)";
+  if (hasManyChildren(d)) {
+    result = "rotate(45)";
+  }
+  return "";
+}
+
+function getTextClass(d) {
+  let result = "label";
+
+  /*
+   */
+  if (hasManyChildren(d)) {
+    if (d.data.name && d.data.name.length >= NUM_CHARS_FOR_TINY_TEXT) {
+      result = "label-tiny";
+    } else {
+      result = "label-small";
+    }
+  }
+  if (false && d.data.name === "Karla Bernard") {
+    // } && d.parent.parent.data && d.parent.parent.data.name == "Unknown") {
+    console.log(`TRACER start for KB`);
+    console.log(d.parent);
+    console.log("TRACER siblings: " + d.parent.data.children.length);
+    console.log(`TRACER end for KB`);
+    result = "label-unknown";
+  }
+  return result;
+}
+
 // ----------
 
-let svg = d3.select("#known"),
-  margin = 20,
-  diameter = +svg.attr("width"),
-  g = svg.append("g").attr("transform", "translate(" + diameter / 2 + "," + diameter / 2 + ")");
+drawKnownCircle();
+// drawUnknownCircle();
 
-let color = d3.scaleLinear().domain([-1, 5]).range(BACKGROUND_RANGE).interpolate(d3.interpolateHcl);
+function drawKnownCircle() {
+  let svg = d3.select("#known"),
+    margin = 20,
+    diameter = +svg.attr("width"),
+    g = svg.append("g").attr("transform", "translate(" + diameter / 2 + "," + diameter / 2 + ")");
 
-let pack = d3
-  .pack()
-  .size([diameter - margin, diameter - margin])
-  .padding(2);
+  let color = d3.scaleLinear().domain([-1, 5]).range(BACKGROUND_RANGE).interpolate(d3.interpolateHcl);
 
-d3.json(JSON_FILE, function (error, root) {
-  if (error) throw error;
+  let pack = d3
+    .pack()
+    .size([diameter - margin, diameter - margin])
+    .padding(2);
 
-  root = d3
-    .hierarchy(root)
-    .sum(function (d) {
-      return d.size;
-    })
-    .sort(function (a, b) {
-      return b.value - a.value;
-    });
+  d3.json(KNOWN_JSON, function (error, root) {
+    if (error) throw error;
 
-  let focus = root,
-    nodes = pack(root).descendants(),
-    view;
-
-  let circle = g
-    .selectAll("circle")
-    .data(nodes)
-    .enter()
-    .append("circle")
-    .attr("class", function (d) {
-      return d.parent ? (d.children ? "node" : "node node--leaf") : "node node--root";
-    })
-    .style("fill", function (d) {
-      return getFillColor(d);
-    })
-    .on("click", function (d) {
-      if (focus !== d) zoom(d), d3.event.stopPropagation();
-    });
-
-  let text = g
-    .selectAll("text")
-    .data(nodes)
-    .enter()
-    .append("text")
-    .attr("class", "label")
-    .style("fill-opacity", function (d) {
-      return d.parent === root ? 1 : 0;
-    })
-    .style("display", function (d) {
-      return d.parent === root ? "inline" : "none";
-    })
-    .text(function (d) {
-      return d.data.name;
-    });
-
-  let node = g.selectAll("circle,text");
-
-  svg.style("background", color(-1)).on("click", function () {
-    zoom(root);
-  });
-
-  zoomTo([root.x, root.y, root.r * 2 + margin]);
-
-  function zoom(d) {
-    let focus0 = focus;
-    focus = d;
-
-    let transition = d3
-      .transition()
-      .duration(d3.event.altKey ? 7500 : 750)
-      .tween("zoom", function (d) {
-        let i = d3.interpolateZoom(view, [focus.x, focus.y, focus.r * 2 + margin]);
-        return function (t) {
-          zoomTo(i(t));
-        };
+    root = d3
+      .hierarchy(root)
+      .sum(function (d) {
+        return d.size;
+      })
+      .sort(function (a, b) {
+        return b.value - a.value;
       });
 
-    transition
+    let focus = root,
+      nodes = pack(root).descendants(),
+      view;
+
+    let circle = g
+      .selectAll("circle")
+      .data(nodes)
+      .enter()
+      .append("circle")
+      .attr("class", function (d) {
+        return d.parent ? (d.children ? "node" : "node node--leaf") : "node node--root";
+      })
+      .style("fill", getFillColor)
+      .on("click", function (d) {
+        if (focus !== d) zoom(d), d3.event.stopPropagation();
+      });
+
+    let text = g
       .selectAll("text")
-      .filter(function (d) {
-        return d.parent === focus || this.style.display === "inline";
-      })
+      .data(nodes)
+      .enter()
+      .append("text")
+      .attr("class", getTextClass)
+      .attr("transform", getTransform)
       .style("fill-opacity", function (d) {
-        return d.parent === focus ? 1 : 0;
+        return d.parent === root ? 1 : 0;
       })
-      .on("start", function (d) {
-        if (d.parent === focus) this.style.display = "inline";
+      .style("display", function (d) {
+        return d.parent === root ? "inline" : "none";
       })
-      .on("end", function (d) {
-        if (d.parent !== focus) this.style.display = "none";
+      .text(function (d) {
+        return d.data.name;
       });
-  }
 
-  function zoomTo(v) {
-    let k = diameter / v[2];
-    view = v;
-    node.attr("transform", function (d) {
-      return "translate(" + (d.x - v[0]) * k + "," + (d.y - v[1]) * k + ")";
+    let node = g.selectAll("circle,text");
+
+    svg.style("background", color(-1)).on("click", function () {
+      zoom(root);
     });
-    circle.attr("r", function (d) {
-      return d.r * k;
+
+    zoomTo([root.x, root.y, root.r * 2 + margin]);
+
+    function zoom(d) {
+      let focus0 = focus;
+      focus = d;
+
+      let transition = d3
+        .transition()
+        .duration(d3.event.altKey ? 7500 : 750)
+        .tween("zoom", function (d) {
+          let i = d3.interpolateZoom(view, [focus.x, focus.y, focus.r * 2 + margin]);
+          return function (t) {
+            zoomTo(i(t));
+          };
+        });
+
+      transition
+        .selectAll("text")
+        .filter(function (d) {
+          return d.parent === focus || this.style.display === "inline";
+        })
+        .style("fill-opacity", function (d) {
+          return d.parent === focus ? 1 : 0;
+        })
+        .on("start", function (d) {
+          if (d.parent === focus) this.style.display = "inline";
+        })
+        .on("end", function (d) {
+          if (d.parent !== focus) this.style.display = "none";
+        });
+    }
+
+    function zoomTo(v) {
+      let k = diameter / v[2];
+      view = v;
+      node.attr("transform", function (d) {
+        return "translate(" + (d.x - v[0]) * k + "," + (d.y - v[1]) * k + ")";
+      });
+      circle.attr("r", function (d) {
+        return d.r * k;
+      });
+    }
+  });
+} // drawKnownCircle
+
+/*
+function drawUnknownCircle() {
+  let svg = d3.select("#unknown"),
+    margin = 20,
+    diameter = +svg.attr("width"),
+    g = svg.append("g").attr("transform", "translate(" + diameter / 2 + "," + diameter / 2 + ")");
+
+  let color = d3.scaleLinear().domain([-1, 5]).range(BACKGROUND_RANGE).interpolate(d3.interpolateHcl);
+
+  let pack = d3
+    .pack()
+    .size([diameter - margin, diameter - margin])
+    .padding(2);
+
+  d3.json(UNKNOWN_JSON, function (error, root) {
+    if (error) throw error;
+
+    root = d3
+      .hierarchy(root)
+      .sum(function (d) {
+        return d.size;
+      })
+      .sort(function (a, b) {
+        return b.value - a.value;
+      });
+
+    let focus = root,
+      nodes = pack(root).descendants(),
+      view;
+
+    let circle = g
+      .selectAll("circle")
+      .data(nodes)
+      .enter()
+      .append("circle")
+      .attr("class", function (d) {
+        return d.parent ? (d.children ? "node" : "node node--leaf") : "node node--root";
+      })
+      .style("fill", function (d) {
+        return getFillColor(d);
+      })
+      .on("click", function (d) {
+        if (focus !== d) zoom(d), d3.event.stopPropagation();
+      });
+
+    let text = g
+      .selectAll("text")
+      .data(nodes)
+      .enter()
+      .append("text")
+      .attr("class", "label")
+      .style("fill-opacity", function (d) {
+        return d.parent === root ? 1 : 0;
+      })
+      .style("display", function (d) {
+        return d.parent === root ? "inline" : "none";
+      })
+      .text(function (d) {
+        return d.data.name;
+      });
+
+    let node = g.selectAll("circle,text");
+
+    svg.style("background", color(-1)).on("click", function () {
+      zoom(root);
     });
-  }
-});
+
+    zoomTo([root.x, root.y, root.r * 2 + margin]);
+
+    function zoom(d) {
+      let focus0 = focus;
+      focus = d;
+
+      let transition = d3
+        .transition()
+        .duration(d3.event.altKey ? 7500 : 750)
+        .tween("zoom", function (d) {
+          let i = d3.interpolateZoom(view, [focus.x, focus.y, focus.r * 2 + margin]);
+          return function (t) {
+            zoomTo(i(t));
+          };
+        });
+
+      transition
+        .selectAll("text")
+        .filter(function (d) {
+          return d.parent === focus || this.style.display === "inline";
+        })
+        .style("fill-opacity", function (d) {
+          return d.parent === focus ? 1 : 0;
+        })
+        .on("start", function (d) {
+          if (d.parent === focus) this.style.display = "inline";
+        })
+        .on("end", function (d) {
+          if (d.parent !== focus) this.style.display = "none";
+        });
+    }
+
+    function zoomTo(v) {
+      let k = diameter / v[2];
+      view = v;
+      node.attr("transform", function (d) {
+        return "translate(" + (d.x - v[0]) * k + "," + (d.y - v[1]) * k + ")";
+      });
+      circle.attr("r", function (d) {
+        return d.r * k;
+      });
+    }
+  });
+} // drawUnnownCircle
+*/
+// ----------
