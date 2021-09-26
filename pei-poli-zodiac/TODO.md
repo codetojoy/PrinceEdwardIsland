@@ -1,6 +1,16 @@
+
+### notes
+
+* duplicate the graph twice on the screen 
+    - id: known
+    - id: unknown
+    - simple to do but tricky with respect to animations
+        - implies two files: known and unknown ... hrm
+        - let's pursue this
+
 ### viz
 
-* rem text
+* links for each MLA ? 
 * html body for more content/layout
 * legend ? 
 * French ?
@@ -10,8 +20,10 @@
 * new graph for unknown ??  
 * fix text size for Unknown
 * responsive for text
-* different colours for zodiac circle
 * centered, responsive
+* x - different colours for zodiac circle
+* x - rem text
+* x - use party colours sampled from website 
 * x - html with svg area, for styling
 * x - move styles
 * x - move JS
