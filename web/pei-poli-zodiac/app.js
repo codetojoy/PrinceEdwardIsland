@@ -1,20 +1,59 @@
+// ----------
+
+const JSON_FILE = "./zodiac.json";
+const BACKGROUND_LIGHT = "hsl(61,80%,80%)";
+const BACKGROUND_DARK = "hsl(80,30%,40%)";
+const BACKGROUND_RANGE = [BACKGROUND_LIGHT, BACKGROUND_DARK];
+
+const GREEN_PARTY = "Green";
+const LIBERAL_PARTY = "Liberal";
+const NDP_PARTY = "NDP";
+const PC_PARTY = "PC";
+const UNKNOWN_PARTY = "Unknown";
+
+// ----------
+
+function getFillColor(d) {
+  let result = null;
+  if (d.children) {
+    if (d.data.name === UNKNOWN_PARTY) {
+      result = d3.color("white");
+    } else {
+      result = color(d.depth);
+    }
+  } else {
+    let party = d.data.party;
+    // colours sampled from party websites
+    if (party === GREEN_PARTY) {
+      // x40, x9D, x4A
+      result = d3.rgb(64, 157, 74);
+    } else if (party === LIBERAL_PARTY) {
+      // E0, 1F, 2B
+      result = d3.rgb(224, 31, 43);
+    } else if (party === NDP_PARTY) {
+      // F3, 82, 30
+      result = d3.rgb(243, 50, 48);
+    } else if (party === PC_PARTY) {
+      // 2E, 85, C4
+      result = d3.rgb(46, 133, 196);
+    }
+  }
+  return result;
+}
+
+// ----------
+
 let svg = d3.select("#known"),
   margin = 20,
   diameter = +svg.attr("width"),
   g = svg.append("g").attr("transform", "translate(" + diameter / 2 + "," + diameter / 2 + ")");
 
-let color = d3
-  .scaleLinear()
-  .domain([-1, 5])
-  .range(["hsl(61,80%,80%)", "hsl(80,30%,40%)"])
-  .interpolate(d3.interpolateHcl);
+let color = d3.scaleLinear().domain([-1, 5]).range(BACKGROUND_RANGE).interpolate(d3.interpolateHcl);
 
 let pack = d3
   .pack()
   .size([diameter - margin, diameter - margin])
   .padding(2);
-
-const JSON_FILE = "./zodiac.json";
 
 d3.json(JSON_FILE, function (error, root) {
   if (error) throw error;
@@ -41,21 +80,7 @@ d3.json(JSON_FILE, function (error, root) {
       return d.parent ? (d.children ? "node" : "node node--leaf") : "node node--root";
     })
     .style("fill", function (d) {
-      let result = null;
-      if (d.children) {
-        result = color(d.depth);
-      } else {
-        if (d.data.party === "Green") {
-          result = d3.hsl("green");
-        } else if (d.data.party === "Liberal") {
-          result = d3.hsl("red");
-        } else if (d.data.party === "NDP") {
-          result = d3.hsl("orange");
-        } else if (d.data.party === "PC") {
-          result = d3.hsl("blue");
-        }
-      }
-      return result;
+      return getFillColor(d);
     })
     .on("click", function (d) {
       if (focus !== d) zoom(d), d3.event.stopPropagation();
