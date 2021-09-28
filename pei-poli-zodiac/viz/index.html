@@ -8,12 +8,28 @@
     <!-- d3 -->
     <script src="https://d3js.org/d3.v4.min.js"></script>
 
-    <title>PEI MLA Zodiac v0.9.0</title>
+    <title>PEI MLA Zodiac v0.9.2</title>
   </head>
 
   <body onload="update()">
     <div class="container">
-      <svg id="known" width="660" height="660"></svg>
+      <div class="header"><p>Sample header</p></div>
+      <div class="content">
+        <div class="circle-info">
+          <p>PEI MLAs, arranged by Zodiac sign</p>
+          <p>Click on circles to zoom in/out</p>
+          <p>(Colours are appropriate for each political party)</p>
+          <p>
+            <a href="https://github.com/codetojoy/PrinceEdwardIsland/blob/master/pei-poli-zodiac/README.md"
+              >More info about this page</a
+            >
+          </p>
+        </div>
+        <div class="circle">
+          <svg id="known" width="660" height="660"></svg>
+        </div>
+      </div>
+      <div class="footer"><p>$ZODIAC_VERSION, last updated $ZODIAC_TIMESTAMP</p></div>
     </div>
     <script src="app.js"></script>
   </body>
