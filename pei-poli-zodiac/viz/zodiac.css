@@ -118,7 +118,7 @@ svg {
       ". . . ."
       "content content content content"
       ". . . ."
-      ". footer footer .";
+      ". . . footer";
   }
 
   .content {
@@ -126,6 +126,11 @@ svg {
     flex-direction: row;
     justify-content: space-around;
     grid-area: content;
+  }
+
+  footer {
+    color: #f3f4a7;
+    font-size: 1rem;
   }
 
   p {
