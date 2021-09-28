@@ -91,11 +91,11 @@ function getTextClass(d) {
 
 function update() {
   console.log(`TRACER main cp 1`);
-  drawKnownCircle();
+  drawCircle();
   console.log(`TRACER main cp 2`);
 }
 
-function drawKnownCircle() {
+function drawCircle() {
   let svg = d3.select("#known"),
     margin = 20,
     diameter = +svg.attr("width"),
@@ -203,4 +203,4 @@ function drawKnownCircle() {
       });
     }
   });
-} // drawKnownCircle
+} // drawCircle

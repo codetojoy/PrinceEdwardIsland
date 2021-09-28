@@ -34,3 +34,66 @@
 .node--leaf {
   pointer-events: none;
 }
+
+/*
+  -------------------- layout
+*/
+
+/*
+  ----------- default is mobile view
+*/
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  grid-template-rows: 50px 10px 1700px 10px 50px;
+  grid-template-areas:
+    "header header header header"
+    ". . . ."
+    "content content content content"
+    ". . . ."
+    "footer footer footer footer";
+}
+
+.header {
+  grid-area: header;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  grid-area: content;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+svg {
+  border-color: black;
+  border-width: 1px;
+  border-style: solid;
+}
+
+/*
+    is min-width >= 40rem ? i.e. desktop, not mobile
+*/
+@media (min-width: 70rem) {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    grid-template-rows: 50px 20px 800px 20px 50px;
+    grid-template-areas:
+      "header header header header"
+      ". . . ."
+      "content content content content"
+      ". . . ."
+      "footer footer footer footer";
+  }
+
+  .content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    grid-area: content;
+  }
+}
