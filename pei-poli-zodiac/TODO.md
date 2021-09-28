@@ -1,16 +1,13 @@
 
 ### notes
 
-* duplicate the graph twice on the screen 
-    - id: known
-    - id: unknown
-    - simple to do but tricky with respect to animations
-        - implies two files: known and unknown ... hrm
-        - let's pursue this
-
 ### viz
 
+* version info 
+* drawer
+    - with animation 
 * links for each MLA ? 
+* favicon
 * html body for more content/layout
 * legend ? 
 * French ?
