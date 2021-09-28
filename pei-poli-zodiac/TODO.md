@@ -3,21 +3,21 @@
 
 ### viz
 
+* text size for Scorpio
 * version info 
 * drawer
     - with animation 
 * links for each MLA ? 
 * favicon
-* html body for more content/layout
 * legend ? 
 * French ?
-* links for info
-* media query 
 * search box for MLA
-* new graph for unknown ??  
-* fix text size for Unknown
 * responsive for text
 * centered, responsive
+* x - media query 
+* x - links for info
+* x - fix text size for Unknown
+* x - html body for more content/layout
 * x - different colours for zodiac circle
 * x - rem text
 * x - use party colours sampled from website 
