@@ -8,10 +8,19 @@ body {
   background-color: black;
 }
 
-p,
-h2 {
+a {
+  color: white;
+  font-size: 1.4rem;
+}
+
+h1 {
   color: #f3f4a7;
-  font-size: 1.2rem;
+  font-size: 1.8rem;
+}
+
+p {
+  color: #f3f4a7;
+  font-size: 1.6rem;
 }
 
 /* begin: original D3 gist */
@@ -65,13 +74,13 @@ h2 {
 .container {
   display: grid;
   grid-template-columns: repeat(4, 25%);
-  grid-template-rows: 50px 10px 850px 10px 50px;
+  grid-template-rows: 50px 10px 1200px 10px 50px;
   grid-template-areas:
     "header header header header"
     ". . . ."
     "content content content content"
     ". . . ."
-    "footer footer footer footer";
+    ". footer footer .";
 }
 
 .header {
@@ -103,13 +112,13 @@ svg {
   .container {
     display: grid;
     grid-template-columns: repeat(4, 25%);
-    grid-template-rows: 50px 20px 800px 20px 50px;
+    grid-template-rows: 5px 5px 800px 20px 50px;
     grid-template-areas:
       "header header header header"
       ". . . ."
       "content content content content"
       ". . . ."
-      "footer footer footer footer";
+      ". footer footer .";
   }
 
   .content {
@@ -117,5 +126,15 @@ svg {
     flex-direction: row;
     justify-content: space-around;
     grid-area: content;
+  }
+
+  p {
+    color: #f3f4a7;
+    font-size: 1.2rem;
+  }
+
+  h1 {
+    color: #f3f4a7;
+    font-size: 1.6rem;
   }
 }
