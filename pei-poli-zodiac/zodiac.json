@@ -57,12 +57,17 @@
                 {
                     "name": "Hannah Bell",
                     "party": "Green",
-                    "size": 500
+                    "size": 333.3333333333
+                },
+                {
+                    "name": "Lynne Lund",
+                    "party": "Green",
+                    "size": 333.3333333333
                 },
                 {
                     "name": "Hon. Matt Mackay",
                     "party": "PC",
-                    "size": 500
+                    "size": 333.3333333333
                 }
             ]
         },
@@ -182,22 +187,17 @@
                 {
                     "name": "Trish Altass",
                     "party": "Green",
-                    "size": 250
+                    "size": 333.3333333333
                 },
                 {
                     "name": "Ole Hammarlund",
                     "party": "Green",
-                    "size": 250
-                },
-                {
-                    "name": "Lynne Lund",
-                    "party": "Green",
-                    "size": 250
+                    "size": 333.3333333333
                 },
                 {
                     "name": "Gordon McNeilly",
                     "party": "Liberal",
-                    "size": 250
+                    "size": 333.3333333333
                 }
             ]
         }
