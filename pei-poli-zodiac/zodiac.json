@@ -137,12 +137,17 @@
                 {
                     "name": "Hon. James Aylward",
                     "party": "PC",
-                    "size": 500
+                    "size": 333.3333333333
+                },
+                {
+                    "name": "Michele Beaton",
+                    "party": "Green",
+                    "size": 333.3333333333
                 },
                 {
                     "name": "Hon. Brad Trivers",
                     "party": "PC",
-                    "size": 500
+                    "size": 333.3333333333
                 }
             ]
         },
@@ -177,27 +182,22 @@
                 {
                     "name": "Trish Altass",
                     "party": "Green",
-                    "size": 200
-                },
-                {
-                    "name": "Michele Beaton",
-                    "party": "Green",
-                    "size": 200
+                    "size": 250
                 },
                 {
                     "name": "Ole Hammarlund",
                     "party": "Green",
-                    "size": 200
+                    "size": 250
                 },
                 {
                     "name": "Lynne Lund",
                     "party": "Green",
-                    "size": 200
+                    "size": 250
                 },
                 {
                     "name": "Gordon McNeilly",
                     "party": "Liberal",
-                    "size": 200
+                    "size": 250
                 }
             ]
         }
