@@ -1,10 +1,11 @@
 
-### notes
+### brainstorm
+
+* map of PEI with Zodiac signs?
 
 ### viz
 
 * text size for Scorpio
-* version info 
 * drawer
     - with animation 
 * links for each MLA ? 
@@ -13,7 +14,8 @@
 * French ?
 * search box for MLA
 * responsive for text
-* centered, responsive
+* x - centered, responsive
+* x - version info 
 * x - media query 
 * x - links for info
 * x - fix text size for Unknown
