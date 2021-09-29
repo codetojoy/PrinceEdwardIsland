@@ -1,7 +1,6 @@
 // ----------
 
 const KNOWN_JSON = "./zodiac.json";
-// const UNKNOWN_JSON = "./zodiac-unknown.json";
 const BACKGROUND_LIGHT = "hsl(61,80%,80%)";
 const BACKGROUND_DARK = "hsl(80,30%,40%)";
 const BACKGROUND_RANGE = [BACKGROUND_LIGHT, BACKGROUND_DARK];
@@ -67,8 +66,6 @@ function getTransform(d) {
 function getTextClass(d) {
   let result = "label";
 
-  /*
-   */
   if (hasManyChildren(d)) {
     if (d.data.name && d.data.name.length >= NUM_CHARS_FOR_TINY_TEXT) {
       result = "label-tiny";
@@ -76,23 +73,14 @@ function getTextClass(d) {
       result = "label-small";
     }
   }
-  if (false && d.data.name === "Karla Bernard") {
-    // } && d.parent.parent.data && d.parent.parent.data.name == "Unknown") {
-    console.log(`TRACER start for KB`);
-    console.log(d.parent);
-    console.log("TRACER siblings: " + d.parent.data.children.length);
-    console.log(`TRACER end for KB`);
-    result = "label-unknown";
-  }
+
   return result;
 }
 
 // ----------
 
 function update() {
-  console.log(`TRACER main cp 1`);
   drawCircle();
-  console.log(`TRACER main cp 2`);
 }
 
 function drawCircle() {
