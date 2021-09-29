@@ -60,8 +60,8 @@
             "name": "Virgo",
             "children": [
                 {
-                    "name": "None identified (yet)",
-                    "party": "unknown",
+                    "name": "Karla Bernard",
+                    "party": "Green",
                     "size": 1000
                 }
             ]
@@ -147,67 +147,62 @@
                 {
                     "name": "Trish Altass",
                     "party": "Green",
-                    "size": 76.9230769231
+                    "size": 83.3333333333
                 },
                 {
                     "name": "Hon. James Aylward",
                     "party": "PC",
-                    "size": 76.9230769231
+                    "size": 83.3333333333
                 },
                 {
                     "name": "Michele Beaton",
                     "party": "Green",
-                    "size": 76.9230769231
+                    "size": 83.3333333333
                 },
                 {
                     "name": "Zack Bell",
                     "party": "PC",
-                    "size": 76.9230769231
-                },
-                {
-                    "name": "Karla Bernard",
-                    "party": "Green",
-                    "size": 76.9230769231
+                    "size": 83.3333333333
                 },
                 {
                     "name": "Cory Deagle",
                     "party": "PC",
-                    "size": 76.9230769231
+                    "size": 83.3333333333
                 },
                 {
                     "name": "Ole Hammarlund",
                     "party": "Green",
-                    "size": 76.9230769231
+                    "size": 83.3333333333
                 },
                 {
                     "name": "Hon. Ernie Hudson",
                     "party": "PC",
-                    "size": 76.9230769231
+                    "size": 83.3333333333
                 },
                 {
                     "name": "Hon. Natalie Jameson",
                     "party": "PC",
-                    "size": 76.9230769231
+                    "size": 83.3333333333
                 },
                 {
                     "name": "Lynne Lund",
                     "party": "Green",
-                    "size": 76.9230769231
+                    "size": 83.3333333333
                 },
                 {
                     "name": "Hon. Matt Mackay",
                     "party": "PC",
-                    "size": 76.9230769231
+                    "size": 83.3333333333
                 },
                 {
                     "name": "Gordon McNeilly",
                     "party": "Liberal",
-                    "size": 76.9230769231
+                    "size": 83.3333333333
                 },
                 {
                     "name": "Hon. Bloyce Thompson",
                     "party": "PC",
-                    "size": 76.9230769231
+                    "size": 83.3333333333
                 }
             ]
         }
