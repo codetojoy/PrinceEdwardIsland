@@ -8,7 +8,7 @@
   - [license for this project](./LICENSE) (Apache License Version 2.0)
 - All birthdays found on [Wikipedia](https://wikipedia.org)
 - Names, titles, ridings from [this page](https://www.assembly.pe.ca/members)
-  - current as of 28-SEP-2021
+  - current as of 29-SEP-2021
 - Contributions welcome, provided info is available in public (or disclosed by MLA)
 
 ### Technical details
