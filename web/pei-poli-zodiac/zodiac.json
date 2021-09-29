@@ -75,9 +75,14 @@
             "name": "Virgo",
             "children": [
                 {
+                    "name": "Trish Altass",
+                    "party": "Green",
+                    "size": 500
+                },
+                {
                     "name": "Karla Bernard",
                     "party": "Green",
-                    "size": 1000
+                    "size": 500
                 }
             ]
         },
@@ -185,19 +190,14 @@
             "name": "Unknown",
             "children": [
                 {
-                    "name": "Trish Altass",
-                    "party": "Green",
-                    "size": 333.3333333333
-                },
-                {
                     "name": "Ole Hammarlund",
                     "party": "Green",
-                    "size": 333.3333333333
+                    "size": 500
                 },
                 {
                     "name": "Gordon McNeilly",
                     "party": "Liberal",
-                    "size": 333.3333333333
+                    "size": 500
                 }
             ]
         }
