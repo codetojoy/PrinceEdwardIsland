@@ -8,6 +8,11 @@ class UtilsTestCase {
     def utils = new Utils()
 
     @Test
+    void testCanary() {
+        assertEquals(2+2, 4)
+    }
+
+    @Test
     void testBuildList_basic() {
         // test
         def result = utils.buildList(['a','b','c'])

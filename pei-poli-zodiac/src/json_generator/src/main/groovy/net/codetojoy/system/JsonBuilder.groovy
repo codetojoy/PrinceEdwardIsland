@@ -44,7 +44,6 @@ class JsonBuilder {
         def children = infos.findResults { info ->
             def dataSign = info.zodiac
             def thisDisplaySign = new Signs().getDisplaySign(dataSign)
-            // println "TRACER z: ${info.zodiac} this: ${thisDisplaySign} d: ${displaySign}"
             if (thisDisplaySign == displaySign) {
                 def person = [:]
                 person[NAME] = info.name
@@ -71,22 +70,6 @@ class JsonBuilder {
         }
         return children
     }
-
-/*
-    def buildTestChildren() {
-        def children = []
-        Signs.DATA_SIGNS.each { sign ->
-            def childMap = [:]
-            childMap[NAME] = sign
-            // { "name": "Person a-ABC", "size": 1000 },
-            def p1 = ["name": "test/$sign person A", "size": 1000]
-            def p2 = ["name": "test/$sign person B", "size": 1000]
-            childMap["children"] = [p1, p2]
-            children << childMap
-        }
-        return children
-    }
-    */
 
     def build(def infos) {
         def children = buildChildren(infos)

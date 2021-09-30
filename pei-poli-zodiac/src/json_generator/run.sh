@@ -3,12 +3,11 @@
 set -e
 
 stat ../../zodiac.csv > /dev/null 2>&1
-# cp ../../zodiac.csv .
 
-./gradlew clean installDist
+./gradlew clean test installDist
 stat staging/bin/json_generator > /dev/null 2>&1
 
-./staging/bin/json_generator ../../zodiac.csv ../../zodiac.json
+./staging/bin/json_generator normal ../../zodiac.csv ../../zodiac.json
 
 cp ../../zodiac.json ../../viz/.
 

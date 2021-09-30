@@ -4,6 +4,7 @@ package net.codetojoy.system
 import net.codetojoy.custom.Config
 
 class Runner {
+    static final def MODE_NORMAL = "normal"
 
     def parser
     def outputHeader
@@ -41,22 +42,27 @@ class Runner {
         }
     }
 
-    def run(def infile, def outfile) {
-        def infos = buildInfos(infile)
-        generateJson(infos, outfile)
+    def run(def mode, def infile, def outfile) {
+        if (mode.trim().toLowerCase() == MODE_NORMAL) {
+            def infos = buildInfos(infile)
+            generateJson(infos, outfile)
+        } else {
+            throw new IllegalArgumentException("unknown mode: $mode")
+        }
     }
 
     def static void main(String[] args) {
-        if (args.size() < 2) {
-            println "Usage: groovy Runner.groovy infile outfile"
+        if (args.size() < 3) {
+            println "Usage: groovy Runner.groovy mode infile outfile"
             System.exit(-1)
         }
 
-        def infile = args[0]
+        def mode = args[0]
+        def infile = args[1]
         assert new File(infile).exists()
-        def outfile = args[1]
+        def outfile = args[2]
 
-        new Runner().run(infile, outfile)
+        new Runner().run(mode, infile, outfile)
     }
 }
 
