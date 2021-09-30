@@ -7,7 +7,7 @@ def workingFile = new File("./web/pei-poli-zodiac/tmp.index.html")
 def pattern = "dd-MMM-yyyy HH:mm:ss";
 def formatter = new SimpleDateFormat(pattern)
 def timestamp = formatter.format(new Date())
-def version = "v 1.0.3"
+def version = "v 1.1.0"
 
 def VERSION_TOKEN = '__ZODIAC_VERSION'
 def TIMESTAMP_TOKEN = '__ZODIAC_TIMESTAMP'

@@ -10,6 +10,7 @@ mv tmp.index.html index.html
 cd ../..
 
 git add -u . 
+git add web/pei-poli-zodiac
 git commit -m "incremental refresh"
 git push origin gh-pages
 
