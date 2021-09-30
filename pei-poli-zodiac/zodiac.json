@@ -92,12 +92,17 @@
                 {
                     "name": "Stephen Howard",
                     "party": "Green",
-                    "size": 500
+                    "size": 333.3333333333
                 },
                 {
                     "name": "Hon. Natalie Jameson",
                     "party": "PC",
-                    "size": 500
+                    "size": 333.3333333333
+                },
+                {
+                    "name": "Gordon McNeilly",
+                    "party": "Liberal",
+                    "size": 333.3333333333
                 }
             ]
         },
@@ -192,12 +197,7 @@
                 {
                     "name": "Ole Hammarlund",
                     "party": "Green",
-                    "size": 500
-                },
-                {
-                    "name": "Gordon McNeilly",
-                    "party": "Liberal",
-                    "size": 500
+                    "size": 1000
                 }
             ]
         }
