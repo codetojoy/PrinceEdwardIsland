@@ -5,15 +5,14 @@
 
 ### viz
 
+* filters for water signs etc?
 * text size for Scorpio
-* drawer
-    - with animation 
 * links for each MLA ? 
-* favicon
 * legend ? 
 * French ?
 * search box for MLA
 * responsive for text
+* x - favicon
 * x - centered, responsive
 * x - version info 
 * x - media query 

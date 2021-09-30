@@ -1,6 +1,6 @@
 // ----------
 
-const KNOWN_JSON = "./zodiac.json";
+const JSON_FILE = "./zodiac.json";
 const BACKGROUND_LIGHT = "hsl(61,80%,80%)";
 const BACKGROUND_DARK = "hsl(80,30%,40%)";
 const BACKGROUND_RANGE = [BACKGROUND_LIGHT, BACKGROUND_DARK];
@@ -96,7 +96,7 @@ function drawCircle() {
     .size([diameter - margin, diameter - margin])
     .padding(2);
 
-  d3.json(KNOWN_JSON, function (error, root) {
+  d3.json(JSON_FILE, function (error, root) {
     if (error) throw error;
 
     root = d3
@@ -151,7 +151,7 @@ function drawCircle() {
     zoomTo([root.x, root.y, root.r * 2 + margin]);
 
     function zoom(d) {
-      let focus0 = focus;
+      // let focus0 = focus;
       focus = d;
 
       let transition = d3
@@ -181,7 +181,7 @@ function drawCircle() {
     }
 
     function zoomTo(v) {
-      let k = diameter / v[2];
+      const k = diameter / v[2];
       view = v;
       node.attr("transform", function (d) {
         return "translate(" + (d.x - v[0]) * k + "," + (d.y - v[1]) * k + ")";
