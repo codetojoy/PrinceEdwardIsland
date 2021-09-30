@@ -33,8 +33,15 @@ class Runner {
         return infos
     }
 
-    def generateJson(def infos, def outputFile) {
-        def json = new JsonBuilder().build(infos)
+    def generateJson(def mode, def infos, def outputFile) {
+        def json = null
+        def jsonBuilder = new JsonBuilder()
+
+        if (mode.trim().toLowerCase() == MODE_NORMAL) {
+            json = jsonBuilder.buildNormal(infos)
+        } else {
+            json = jsonBuilder.buildWithElements(infos)
+        }
 
         new File(outputFile).withWriter { writer ->
             writer.write(json)
@@ -43,12 +50,11 @@ class Runner {
     }
 
     def run(def mode, def infile, def outfile) {
-        if (mode.trim().toLowerCase() == MODE_NORMAL) {
-            def infos = buildInfos(infile)
-            generateJson(infos, outfile)
-        } else {
+        if (! mode.trim().toLowerCase() == MODE_NORMAL) {
             throw new IllegalArgumentException("unknown mode: $mode")
         }
+        def infos = buildInfos(infile)
+        generateJson(mode, infos, outfile)
     }
 
     def static void main(String[] args) {

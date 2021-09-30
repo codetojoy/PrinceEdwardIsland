@@ -71,9 +71,42 @@ class JsonBuilder {
         return children
     }
 
-    def build(def infos) {
+    def buildNormal(def infos) {
         def children = buildChildren(infos)
         def jsonMap = ["name" : "zodiac", "children" : children]
+        def json = JsonOutput.toJson(jsonMap)
+        return JsonOutput.prettyPrint(json)
+    }
+
+    def buildChildrenWithElement(def infos, def element) {
+        def children = []
+        def signs = new Signs()
+        Signs.DISPLAY_SIGNS.each { sign ->
+            if (signs.isSignInElement(sign, element)) {
+                def childMap = [:]
+                childMap[NAME] = sign
+                childMap[CHILDREN] = buildChildrenForSign(infos, sign)
+                children << childMap
+            }
+        }
+        return children
+    }
+
+    def buildWithElements(def infos) {
+        // this is not efficient, but it's a small list
+        def fireChildren = buildChildrenWithElement(infos, "Fire")
+        def waterChildren = buildChildrenWithElement(infos, "Water")
+        def airChildren = buildChildrenWithElement(infos, "Air")
+        def earthChildren = buildChildrenWithElement(infos, "Earth")
+
+        def jsonMap = [
+            "name" : "zodiac", "children" : [
+                ["name": "Fire", "children" : fireChildren],
+                ["name": "Water", "children" : waterChildren],
+                ["name": "Air", "children" : airChildren],
+                ["name": "Earth", "children" : earthChildren],
+            ]
+        ]
         def json = JsonOutput.toJson(jsonMap)
         return JsonOutput.prettyPrint(json)
     }
