@@ -56,14 +56,6 @@ function hasManyChildren(d) {
   return result;
 }
 
-function getTransform(d) {
-  let result = "rotate(45)";
-  if (hasManyChildren(d)) {
-    result = "rotate(45)";
-  }
-  return "";
-}
-
 function getTextClass(d) {
   let result = "label";
 
@@ -139,7 +131,6 @@ function drawCircle(jsonFile) {
       .enter()
       .append("text")
       .attr("class", getTextClass)
-      .attr("transform", getTransform)
       .style("fill-opacity", function (d) {
         return d.parent === root ? 1 : 0;
       })
