@@ -2,15 +2,16 @@
 
 set -e
 
-stat ../../zodiac.csv > /dev/null 2>&1
+SRC_CSV=../../zodiac.csv
+TARGET_ZODIAC=../../zodiac.json
+TARGET_ELEMENTS=../../zodiac_elements.json
+
+stat $SRC_CSV > /dev/null 2>&1
 
 ./gradlew clean test installDist
 stat staging/bin/json_generator > /dev/null 2>&1
 
-./staging/bin/json_generator normal ../../zodiac.csv ../../zodiac.json
-./staging/bin/json_generator elements ../../zodiac.csv ../../zodiac_elements.json
-
-cp ../../zodiac.json ../../viz/.
-cp ../../zodiac_elements.json ../../viz/.
+./staging/bin/json_generator normal $SRC_CSV $TARGET_ZODIAC
+./staging/bin/json_generator elements $SRC_CSV $TARGET_ELEMENTS
 
 echo "Ready."
