@@ -32,14 +32,14 @@ class JsonBuilderTestCase {
 	// test
 	def result = jsonBuilder.buildNormal(infos)
 
+	// this is ridiculous, but YOLO:
+
 	def jsonSlurper = new JsonSlurper()
 	def resultMap = jsonSlurper.parseText(result)
 	def topLevelChildren = resultMap["children"]
 
 	assertEquals(resultMap["name"], "zodiac")
 	assertEquals(topLevelChildren.size(), 13)
-
-	// this is ridiculous, but YOLO:
 
 	topLevelChildren.each { child ->
 	    def sign = child["name"]
@@ -149,7 +149,5 @@ class JsonBuilderTestCase {
 	    assertEquals(grandChild["party"], "unknown")
 	    assertEquals(grandChild["size"], 1000)
 	}
-
-	// println "TRACER result:\n" + result
     }
 }

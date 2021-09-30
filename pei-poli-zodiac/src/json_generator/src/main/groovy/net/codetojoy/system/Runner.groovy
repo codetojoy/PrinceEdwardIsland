@@ -5,6 +5,7 @@ import net.codetojoy.custom.Config
 
 class Runner {
     static final def MODE_NORMAL = "normal"
+    static final def MODE_ELEMENTS = "elements"
 
     def parser
     def outputHeader
@@ -50,7 +51,7 @@ class Runner {
     }
 
     def run(def mode, def infile, def outfile) {
-        if (! mode.trim().toLowerCase() == MODE_NORMAL) {
+        if ((! mode.trim().toLowerCase() == MODE_NORMAL) && (! mode.trim().toLowerCase() == MODE_ELEMENTS)) {
             throw new IllegalArgumentException("unknown mode: $mode")
         }
         def infos = buildInfos(infile)
@@ -71,5 +72,3 @@ class Runner {
         new Runner().run(mode, infile, outfile)
     }
 }
-
-
