@@ -60,13 +60,13 @@ p {
 }
 
 .label-small {
-  font: 1rem "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 1.3rem "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-anchor: middle;
   text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;
 }
 
 .label-tiny {
-  font: 0.7rem "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 1.1rem "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-anchor: middle;
   text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;
 }

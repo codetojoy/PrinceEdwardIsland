@@ -3,10 +3,15 @@
 
 * map of PEI with Zodiac signs?
 
+### next
+
+* text size for Scorpio
+* version wonkiness
+* Facebook thumbnail 
+
 ### viz
 
 * filters for water signs etc?
-* text size for Scorpio
 * links for each MLA ? 
 * legend ? 
 * French ?
