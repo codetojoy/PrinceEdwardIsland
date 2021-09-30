@@ -111,7 +111,14 @@ p {
 
 .footer {
   grid-area: footer;
-  font-size: 0.8rem;
+  font-size: 0.2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.footer p {
+  font-size: 0.7rem;
 }
 
 svg {
@@ -133,7 +140,7 @@ svg {
       ". . . ."
       "content content content content"
       ". . . ."
-      ". . . footer";
+      ". footer footer .";
   }
 
   .content {
@@ -143,9 +150,9 @@ svg {
     grid-area: content;
   }
 
-  footer {
+  .footer p {
     color: #f3f4a7;
-    font-size: 1rem;
+    font-size: 0.7rem;
   }
 
   p,
