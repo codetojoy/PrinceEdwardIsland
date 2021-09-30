@@ -47,4 +47,22 @@ class Signs {
 	      throw new IllegalStateException("internal error for '$dataSign' : $index")
     }
   }
+
+/*
+Fire: Aries, Leo, Sagittarius
+Water: Cancer, Scorpio, Pisces
+Air: Libra, Aquarius, Gemini
+Earth: Capricorn, Taurus, Virgo
+*/
+
+  static final def ELEMENT_DISPLAY_SIGNS_MAP = [
+      "Fire" : ["Aries", "Leo", "Sagittarius"],
+      "Water" : ["Cancer", "Scorpio", "Pisces"],
+      "Air" : ["Libra", "Aquarius", "Gemini"],
+      "Earth" : ["Capricorn", "Taurus", "Virgo"],
+  ]
+
+  def isSignInElement(def displaySign, def element) {
+    return ELEMENT_DISPLAY_SIGNS_MAP[element].contains(displaySign)
+  }
 }

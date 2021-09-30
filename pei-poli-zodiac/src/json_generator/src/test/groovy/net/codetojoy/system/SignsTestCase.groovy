@@ -16,8 +16,8 @@ class SignsTestCase {
     void testGetDisplaySign_basic() {
         def dataSign = "aries"
 
-	// test
-	def result = signs.getDisplaySign(dataSign)
+        // test
+        def result = signs.getDisplaySign(dataSign)
 
         assertEquals("Aries", result)
     }
@@ -26,8 +26,8 @@ class SignsTestCase {
     void testGetDisplaySign_unknown() {
         def dataSign = "unknown"
 
-	// test
-	def result = signs.getDisplaySign(dataSign)
+        // test
+        def result = signs.getDisplaySign(dataSign)
 
         assertEquals("Unknown", result)
     }
@@ -36,7 +36,38 @@ class SignsTestCase {
     void testGetDisplaySign_pathological() {
         def dataSign = "bogus"
 
-	// test
-	def result = signs.getDisplaySign(dataSign)
+        // test
+        def result = signs.getDisplaySign(dataSign)
+    }
+
+    @Test
+    void testIsSignInElement_basic() {
+        def displaySign = "Aries"
+        def element = "Fire"
+
+        // test
+        def result = signs.isSignInElement(displaySign, element)
+
+        assertTrue(result)
+    }
+
+    @Test
+    void testIsSignInElement_wrong() {
+        def displaySign = "Aries"
+        def element = "Water"
+
+        // test
+        def result = signs.isSignInElement(displaySign, element)
+
+        assertFalse(result)
+    }
+
+    @Test(expected=NullPointerException.class)
+    void testIsSignInElement_pathological() {
+        def displaySign = "Aries"
+        def element = "bogus"
+
+        // test
+        def result = signs.isSignInElement(displaySign, element)
     }
 }
