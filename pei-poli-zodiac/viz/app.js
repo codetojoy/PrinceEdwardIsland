@@ -1,6 +1,7 @@
 // ----------
 
-const JSON_FILE = "./zodiac.json";
+const NORMAL_JSON_FILE = "./zodiac.json";
+const ELEMENTS_JSON_FILE = "./zodiac_elements.json";
 const BACKGROUND_LIGHT = "hsl(61,80%,80%)";
 const BACKGROUND_DARK = "hsl(80,30%,40%)";
 const BACKGROUND_RANGE = [BACKGROUND_LIGHT, BACKGROUND_DARK];
@@ -79,11 +80,15 @@ function getTextClass(d) {
 
 // ----------
 
-function update() {
-  drawCircle();
+function updateNormalMode() {
+  drawCircle(NORMAL_JSON_FILE);
 }
 
-function drawCircle() {
+function updateElementsMode() {
+  drawCircle(ELEMENTS_JSON_FILE);
+}
+
+function drawCircle(jsonFile) {
   let svg = d3.select("#known"),
     margin = 20,
     diameter = +svg.attr("width"),
@@ -96,7 +101,7 @@ function drawCircle() {
     .size([diameter - margin, diameter - margin])
     .padding(2);
 
-  d3.json(JSON_FILE, function (error, root) {
+  d3.json(jsonFile, function (error, root) {
     if (error) throw error;
 
     root = d3
@@ -151,7 +156,6 @@ function drawCircle() {
     zoomTo([root.x, root.y, root.r * 2 + margin]);
 
     function zoom(d) {
-      // let focus0 = focus;
       focus = d;
 
       let transition = d3
@@ -192,3 +196,15 @@ function drawCircle() {
     }
   });
 } // drawCircle
+
+function modeCheckboxHandler(event) {
+  const value = event.target.value;
+  if (value === "normal") {
+    drawCircle(NORMAL_JSON_FILE);
+  } else if (value === "elements") {
+    drawCircle(ELEMENTS_JSON_FILE);
+  }
+}
+
+document.getElementById("checkbox-normal").addEventListener("change", modeCheckboxHandler);
+document.getElementById("checkbox-elements").addEventListener("change", modeCheckboxHandler);

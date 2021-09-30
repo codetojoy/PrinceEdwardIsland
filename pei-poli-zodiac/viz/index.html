@@ -12,16 +12,21 @@
     <title>PEI MLA Zodiac</title>
   </head>
 
-  <body onload="update()">
+  <body onload="updateNormalMode()">
     <div class="container">
       <div class="header"><p></p></div>
       <div class="content">
-        <div class="circle-info">
+        <div class="main-info">
           <h1>Prince Edward Island MLAs, grouped by Zodiac sign</h1>
           <p>Click on circles to zoom in/out</p>
-          <p>
-            <a href="https://codetojoy.github.io/PrinceEdwardIsland/web/pei-poli-zodiac/info.html">More info</a>
-            (including Open Data CSV file)
+          <div class="mode-controls">
+            <input type="radio" id="checkbox-normal" name="mode" value="normal" checked />
+            <label for="checkbox-normal">Signs</label>
+            <input type="radio" id="checkbox-elements" name="mode" value="elements" />
+            <label for="checkbox-elements">Elements</label>
+          </div>
+          <p class="info-link">
+            <a href="./info.html">About this project</a>
           </p>
         </div>
         <div class="circle">
