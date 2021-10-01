@@ -2,7 +2,7 @@
 
 - A silly project, inspired by [this tweet](https://twitter.com/perry_chel/status/1437800478897758212)
   - Uses the amazing [D3.js library](https://d3js.org)
-  - Inpsired, specifically, by [this example](https://gist.github.com/mbostock/4063530)
+  - Inspired, specifically, by [this example](https://gist.github.com/mbostock/4063530)
 - The intent here is some levity during a pandemic.
 - Data-set is [here](./zodiac.csv)
   - see License Details below
