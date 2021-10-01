@@ -10,7 +10,7 @@
   - sources listed in the data file
 - Names, titles, ridings from [this page](https://www.assembly.pe.ca/members)
   - current as of 29-SEP-2021
-- Contributions welcome, provided info is available in public (or disclosed by MLA)
+- Contributions welcome, provided info is disclosed by MLA in public.
 
 ### Technical details
 
