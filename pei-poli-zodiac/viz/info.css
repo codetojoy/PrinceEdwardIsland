@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+
 * {
   box-sizing: border-box;
 }
@@ -44,7 +46,7 @@ p {
 .container-info {
   margin-top: 5rem;
   margin-left: 10rem;
-  margin-right: 16rem;
+  margin-right: 14rem;
   align-self: stretch;
 }
 
