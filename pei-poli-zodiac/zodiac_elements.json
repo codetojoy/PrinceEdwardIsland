@@ -1,0 +1,220 @@
+{
+    "name": "zodiac",
+    "children": [
+        {
+            "name": "Fire",
+            "children": [
+                {
+                    "name": "Aries",
+                    "children": [
+                        {
+                            "name": "Sonny Gallant",
+                            "party": "Liberal",
+                            "size": 1000
+                        }
+                    ]
+                },
+                {
+                    "name": "Leo",
+                    "children": [
+                        {
+                            "name": "Hannah Bell",
+                            "party": "Green",
+                            "size": 333.3333333333
+                        },
+                        {
+                            "name": "Lynne Lund",
+                            "party": "Green",
+                            "size": 333.3333333333
+                        },
+                        {
+                            "name": "Hon. Matt Mackay",
+                            "party": "PC",
+                            "size": 333.3333333333
+                        }
+                    ]
+                },
+                {
+                    "name": "Sagittarius",
+                    "children": [
+                        {
+                            "name": "Hon. Steven Myers",
+                            "party": "PC",
+                            "size": 1000
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Water",
+            "children": [
+                {
+                    "name": "Cancer",
+                    "children": [
+                        {
+                            "name": "Cory Deagle",
+                            "party": "PC",
+                            "size": 500
+                        },
+                        {
+                            "name": "Robert Henderson",
+                            "party": "Liberal",
+                            "size": 500
+                        }
+                    ]
+                },
+                {
+                    "name": "Scorpio",
+                    "children": [
+                        {
+                            "name": "Hon. Ernie Hudson",
+                            "party": "PC",
+                            "size": 200
+                        },
+                        {
+                            "name": "Hon. Dennis King",
+                            "party": "PC",
+                            "size": 200
+                        },
+                        {
+                            "name": "Hon. Colin LaVie",
+                            "party": "PC",
+                            "size": 200
+                        },
+                        {
+                            "name": "Sidney MacEwen",
+                            "party": "PC",
+                            "size": 200
+                        },
+                        {
+                            "name": "Hal Perry",
+                            "party": "Liberal",
+                            "size": 200
+                        }
+                    ]
+                },
+                {
+                    "name": "Pisces",
+                    "children": [
+                        {
+                            "name": "Zack Bell",
+                            "party": "PC",
+                            "size": 500
+                        },
+                        {
+                            "name": "Hon. Bloyce Thompson",
+                            "party": "PC",
+                            "size": 500
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Air",
+            "children": [
+                {
+                    "name": "Gemini",
+                    "children": [
+                        {
+                            "name": "Hon. Peter Bevan-Baker",
+                            "party": "Green",
+                            "size": 500
+                        },
+                        {
+                            "name": "Hon. Jamie Fox",
+                            "party": "PC",
+                            "size": 500
+                        }
+                    ]
+                },
+                {
+                    "name": "Libra",
+                    "children": [
+                        {
+                            "name": "Stephen Howard",
+                            "party": "Green",
+                            "size": 333.3333333333
+                        },
+                        {
+                            "name": "Hon. Natalie Jameson",
+                            "party": "PC",
+                            "size": 333.3333333333
+                        },
+                        {
+                            "name": "Gordon McNeilly",
+                            "party": "Liberal",
+                            "size": 333.3333333333
+                        }
+                    ]
+                },
+                {
+                    "name": "Aquarius",
+                    "children": [
+                        {
+                            "name": "Hon. Darlene Compton",
+                            "party": "PC",
+                            "size": 1000
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Earth",
+            "children": [
+                {
+                    "name": "Taurus",
+                    "children": [
+                        {
+                            "name": "None here!",
+                            "party": "unknown",
+                            "size": 1000
+                        }
+                    ]
+                },
+                {
+                    "name": "Virgo",
+                    "children": [
+                        {
+                            "name": "Trish Altass",
+                            "party": "Green",
+                            "size": 500
+                        },
+                        {
+                            "name": "Karla Bernard",
+                            "party": "Green",
+                            "size": 500
+                        }
+                    ]
+                },
+                {
+                    "name": "Capricorn",
+                    "children": [
+                        {
+                            "name": "Hon. James Aylward",
+                            "party": "PC",
+                            "size": 250
+                        },
+                        {
+                            "name": "Michele Beaton",
+                            "party": "Green",
+                            "size": 250
+                        },
+                        {
+                            "name": "Ole Hammarlund",
+                            "party": "Green",
+                            "size": 250
+                        },
+                        {
+                            "name": "Hon. Brad Trivers",
+                            "party": "PC",
+                            "size": 250
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

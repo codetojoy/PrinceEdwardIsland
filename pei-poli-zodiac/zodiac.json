@@ -15,7 +15,7 @@
             "name": "Taurus",
             "children": [
                 {
-                    "name": "None identified (yet)",
+                    "name": "None here!",
                     "party": "unknown",
                     "size": 1000
                 }
@@ -152,17 +152,22 @@
                 {
                     "name": "Hon. James Aylward",
                     "party": "PC",
-                    "size": 333.3333333333
+                    "size": 250
                 },
                 {
                     "name": "Michele Beaton",
                     "party": "Green",
-                    "size": 333.3333333333
+                    "size": 250
+                },
+                {
+                    "name": "Ole Hammarlund",
+                    "party": "Green",
+                    "size": 250
                 },
                 {
                     "name": "Hon. Brad Trivers",
                     "party": "PC",
-                    "size": 333.3333333333
+                    "size": 250
                 }
             ]
         },
@@ -188,16 +193,6 @@
                     "name": "Hon. Bloyce Thompson",
                     "party": "PC",
                     "size": 500
-                }
-            ]
-        },
-        {
-            "name": "Unknown",
-            "children": [
-                {
-                    "name": "Ole Hammarlund",
-                    "party": "Green",
-                    "size": 1000
                 }
             ]
         }

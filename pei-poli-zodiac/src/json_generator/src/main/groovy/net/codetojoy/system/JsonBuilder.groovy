@@ -26,7 +26,7 @@ class JsonBuilder {
     static final def CHILDREN = "children"
     static final def ZODIAC = "zodiac"
 
-    static final def NONE = "None identified (yet)"
+    static final def NONE = "None here!"
     static final def DEFAULT_SIZE = 1000
 
     def getSizeForSign(def infos, def sign) {
@@ -63,10 +63,12 @@ class JsonBuilder {
     def buildChildren(def infos) {
         def children = []
         Signs.DISPLAY_SIGNS.each { sign ->
-            def childMap = [:]
-            childMap[NAME] = sign
-            childMap[CHILDREN] = buildChildrenForSign(infos, sign)
-            children << childMap
+            if (sign != Signs.UNKNOWN_DISPLAY_SIGN) {
+                def childMap = [:]
+                childMap[NAME] = sign
+                childMap[CHILDREN] = buildChildrenForSign(infos, sign)
+                children << childMap
+            }
         }
         return children
     }

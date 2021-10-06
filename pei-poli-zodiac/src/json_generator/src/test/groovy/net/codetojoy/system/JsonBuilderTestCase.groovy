@@ -39,7 +39,7 @@ class JsonBuilderTestCase {
 	def topLevelChildren = resultMap["children"]
 
 	assertEquals(resultMap["name"], "zodiac")
-	assertEquals(topLevelChildren.size(), 13)
+	assertEquals(topLevelChildren.size(), 12)
 
 	topLevelChildren.each { child ->
 	    def sign = child["name"]
@@ -52,7 +52,7 @@ class JsonBuilderTestCase {
 		assertEquals(grandChild["party"], "PC")
 		assertEquals(grandChild["size"], 1000)
 	    } else {
-		assertEquals(grandChild["name"], "None identified (yet)")
+		assertEquals(grandChild["name"], JsonBuilder.NONE)
 		assertEquals(grandChild["party"], "unknown")
 		assertEquals(grandChild["size"], 1000)
 	    }
@@ -106,7 +106,7 @@ class JsonBuilderTestCase {
             assertEquals(child["children"].size(), 1)
 	    def grandChild = child["children"][0]
 
-	    assertEquals(grandChild["name"], "None identified (yet)")
+	    assertEquals(grandChild["name"], JsonBuilder.NONE)
 	    assertEquals(grandChild["party"], "unknown")
 	    assertEquals(grandChild["size"], 1000)
 	}
@@ -117,7 +117,7 @@ class JsonBuilderTestCase {
             assertEquals(child["children"].size(), 1)
 	    def grandChild = child["children"][0]
 
-	    assertEquals(grandChild["name"], "None identified (yet)")
+	    assertEquals(grandChild["name"], JsonBuilder.NONE)
 	    assertEquals(grandChild["party"], "unknown")
 	    assertEquals(grandChild["size"], 1000)
 	}
@@ -133,7 +133,7 @@ class JsonBuilderTestCase {
 		assertEquals(grandChild["party"], "PC")
 		assertEquals(grandChild["size"], 1000)
 	    } else {
-		assertEquals(grandChild["name"], "None identified (yet)")
+		assertEquals(grandChild["name"], JsonBuilder.NONE)
 		assertEquals(grandChild["party"], "unknown")
 		assertEquals(grandChild["size"], 1000)
 	    }
@@ -145,7 +145,7 @@ class JsonBuilderTestCase {
             assertEquals(child["children"].size(), 1)
 	    def grandChild = child["children"][0]
 
-	    assertEquals(grandChild["name"], "None identified (yet)")
+	    assertEquals(grandChild["name"], JsonBuilder.NONE)
 	    assertEquals(grandChild["party"], "unknown")
 	    assertEquals(grandChild["size"], 1000)
 	}
