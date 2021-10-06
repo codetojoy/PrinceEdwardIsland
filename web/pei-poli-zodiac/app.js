@@ -90,14 +90,13 @@ function drawCircle(jsonFile) {
   svg.selectAll("circle").remove();
 
   /*
-  let previousNodes = svg.selectAll("circle").attr("class", "node");
+  let previousNodes = svg.selectAll("circle,text");
 
   if (previousNodes.empty()) {
     loadNewNodes();
   } else {
     // fade-out previous so the UI doesn't just snap/flicker
     previousNodes
-      .selectAll("text")
       .transition()
       .duration(500)
       .ease(Math.sqrt)
