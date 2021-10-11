@@ -89,25 +89,6 @@ function drawCircle(jsonFile) {
   // clear any previous graph, esp. if zoomed in
   svg.selectAll("circle").remove();
 
-  /*
-  let previousNodes = svg.selectAll("circle,text");
-
-  if (previousNodes.empty()) {
-    loadNewNodes();
-  } else {
-    // fade-out previous so the UI doesn't just snap/flicker
-    previousNodes
-      .transition()
-      .duration(500)
-      .ease(Math.sqrt)
-      .attr("r", 0)
-      .style("stroke-opacity", 1e-6)
-      .style("fill-opacity", 1e-6)
-      .remove()
-      .on("end", loadNewNodes);
-  }
-  */
-
   // function loadNewNodes() {
   let color = d3.scaleLinear().domain([-1, 5]).range(BACKGROUND_RANGE).interpolate(d3.interpolateHcl);
 
@@ -209,7 +190,6 @@ function drawCircle(jsonFile) {
       });
     }
   });
-  // } // loadNewNodes
 } // drawCircle
 
 function modeCheckboxHandler(event) {
