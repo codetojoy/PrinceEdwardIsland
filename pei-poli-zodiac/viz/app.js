@@ -195,6 +195,7 @@ function modeCheckboxHandler(event) {
 document.getElementById("checkbox-normal").addEventListener("change", modeCheckboxHandler);
 document.getElementById("checkbox-elements").addEventListener("change", modeCheckboxHandler);
 
+/*
 const backdrop = document.querySelector(".backdrop");
 const toggleButton = document.querySelector(".toggle-button");
 const sideNav = document.querySelector(".side-nav");
@@ -218,3 +219,4 @@ function closeModal() {
     backdrop.style.display = "none";
   }, 200);
 }
+*/

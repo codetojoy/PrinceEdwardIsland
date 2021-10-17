@@ -1,0 +1,86 @@
+:root {
+  --primary: #f3f4a7;
+  --background: black;
+  --secondary: white;
+}
+
+/* begin: navgation, button, sideNav */
+
+.toggle-button {
+  width: 3rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-left: 1.2rem;
+  vertical-align: middle;
+}
+
+.toggle-button:focus {
+  outline: none;
+}
+
+.toggle-button__bar {
+  width: 100%;
+  height: 0.2rem;
+  background: var(--primary);
+  display: block;
+  margin: 0.6rem 0;
+}
+
+.backdrop {
+  display: none;
+  position: fixed;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  transition: opacity 0.2s linear;
+}
+
+.side-nav {
+  transform: translateX(-100%);
+  position: fixed;
+  z-index: 101;
+  top: 0;
+  left: 0;
+  background: var(--background);
+  background-image: linear-gradient(135deg, var(--background), var(--primary));
+  width: 30%;
+  height: 100vh;
+  transition: transform 300ms ease-out;
+}
+
+.side-nav__items {
+  width: 30%;
+  height: 30%;
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.side-nav__item {
+  margin: 1rem 0;
+}
+
+.side-nav__item a {
+  text-decoration: none;
+  color: var(--primary);
+  font-size: 1.4rem;
+  font-weight: bold;
+  padding: 0.2rem 0;
+}
+
+.open {
+  display: block !important;
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}

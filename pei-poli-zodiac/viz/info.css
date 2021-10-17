@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
 
 * {
   box-sizing: border-box;
@@ -26,6 +26,10 @@ label {
   text-decoration: none;
 }
 
+li a {
+  font-size: 1.5rem;
+}
+
 h1 {
   color: #f3f4a7;
   font-size: 1.8rem;
@@ -38,6 +42,7 @@ h2 {
   text-shadow: 0 1px 0 #000, 1px 0 0 #000, -1px 0 0 #000, 0 -1px 0 #000;
 }
 
+li,
 p {
   color: #f3f4a7;
   font-size: 1.6rem;
