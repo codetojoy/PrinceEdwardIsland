@@ -6,7 +6,7 @@ set -e
 groovy VersionInfo.groovy 
 
 cd ./web/pei-poli-zodiac
-mv tmp.index.html index.html 
+mv tmp.info.html info.html 
 cd ../..
 
 git add -u . 

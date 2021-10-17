@@ -1,13 +1,13 @@
 
 import java.text.SimpleDateFormat 
 
-def file = new File("./web/pei-poli-zodiac/index.html")
-def workingFile = new File("./web/pei-poli-zodiac/tmp.index.html")
+def file = new File("./web/pei-poli-zodiac/info.html")
+def workingFile = new File("./web/pei-poli-zodiac/tmp.info.html")
 
 def pattern = "dd-MM-yyyy HH:mm";
 def formatter = new SimpleDateFormat(pattern)
 def timestamp = formatter.format(new Date())
-def version = "v 1.1.4"
+def version = "v 1.2.0"
 
 def VERSION_TOKEN = '__ZODIAC_VERSION'
 def TIMESTAMP_TOKEN = '__ZODIAC_TIMESTAMP'

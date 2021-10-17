@@ -17,6 +17,11 @@ stat $SRC_DIR/viz/app.js > /dev/null 2>&1
 stat $SRC_DIR/viz/info.html > /dev/null 2>&1
 stat $SRC_DIR/viz/info.css > /dev/null 2>&1
 
+stat $SRC_DIR/viz/other.html > /dev/null 2>&1
+
+stat $SRC_DIR/viz/nav.css > /dev/null 2>&1
+stat $SRC_DIR/viz/nav.js > /dev/null 2>&1
+
 # --------- copy 
 
 cp $SRC_DIR/zodiac.json $DEST_DIR/.
@@ -28,3 +33,8 @@ cp $SRC_DIR/viz/app.js $DEST_DIR/.
 
 cp $SRC_DIR/viz/info.html $DEST_DIR/.
 cp $SRC_DIR/viz/info.css $DEST_DIR/.
+
+cp $SRC_DIR/viz/other.html $DEST_DIR/.
+
+cp $SRC_DIR/viz/nav.css $DEST_DIR/.
+cp $SRC_DIR/viz/nav.js $DEST_DIR/.

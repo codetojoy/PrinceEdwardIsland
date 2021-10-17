@@ -15,42 +15,31 @@ const UNKNOWN_PARTY = "Unknown";
 const NUM_SIBLINGS_FOR_SMALL_TEXT = 4;
 const NUM_CHARS_FOR_TINY_TEXT = 14;
 
+const MODE_NORMAL = "normal";
+const MODE_ELEMENTS = "elements";
+
+// colours sampled from party websites
+const PARTY_COLOR_MAP = {
+  [GREEN_PARTY]: d3.rgb(64, 157, 74),
+  [LIBERAL_PARTY]: d3.rgb(224, 31, 43),
+  [NDP_PARTY]: d3.rgb(243, 50, 48),
+  [PC_PARTY]: d3.rgb(46, 133, 196),
+  [UNKNOWN_PARTY]: d3.color("white"),
+};
+
+const color = d3.scaleLinear().domain([-1, 5]).range(BACKGROUND_RANGE).interpolate(d3.interpolateHcl);
+
 // ----------
 
 function getFillColor(d) {
-  let result = null;
-  if (d.children) {
-    if (d.data.name === UNKNOWN_PARTY) {
-      result = d3.color("white");
-    } else {
-      let color = d3.scaleLinear().domain([-1, 5]).range(BACKGROUND_RANGE).interpolate(d3.interpolateHcl);
-      result = color(d.depth);
-    }
-  } else {
-    let party = d.data.party;
-    // colours sampled from party websites
-    if (party === GREEN_PARTY) {
-      // x40, x9D, x4A
-      result = d3.rgb(64, 157, 74);
-    } else if (party === LIBERAL_PARTY) {
-      // E0, 1F, 2B
-      result = d3.rgb(224, 31, 43);
-    } else if (party === NDP_PARTY) {
-      // F3, 82, 30
-      result = d3.rgb(243, 50, 48);
-    } else if (party === PC_PARTY) {
-      // 2E, 85, C4
-      result = d3.rgb(46, 133, 196);
-    }
-  }
-  return result;
+  return d.children ? color(d.depth) : PARTY_COLOR_MAP[d.data.party];
 }
 
 function hasManyChildren(d) {
   let result = false;
-  let isLeaf = d.data.children == null;
+  const isLeaf = d.data.children == null;
   if (isLeaf && d.parent && d.parent.data && d.parent.data.children) {
-    let numNodes = d.parent.data.children.length;
+    const numNodes = d.parent.data.children.length;
     result = numNodes >= NUM_SIBLINGS_FOR_SMALL_TEXT;
   }
   return result;
@@ -84,32 +73,11 @@ function drawCircle(jsonFile) {
   let svg = d3.select("#known"),
     margin = 20,
     diameter = +svg.attr("width"),
-    g = svg.append("g").attr("transform", "translate(" + diameter / 2 + "," + diameter / 2 + ")");
+    radius = diameter / 2,
+    g = svg.append("g").attr("transform", `translate(${radius}, ${radius})`);
 
   // clear any previous graph, esp. if zoomed in
   svg.selectAll("circle").remove();
-
-  /*
-  let previousNodes = svg.selectAll("circle,text");
-
-  if (previousNodes.empty()) {
-    loadNewNodes();
-  } else {
-    // fade-out previous so the UI doesn't just snap/flicker
-    previousNodes
-      .transition()
-      .duration(500)
-      .ease(Math.sqrt)
-      .attr("r", 0)
-      .style("stroke-opacity", 1e-6)
-      .style("fill-opacity", 1e-6)
-      .remove()
-      .on("end", loadNewNodes);
-  }
-  */
-
-  // function loadNewNodes() {
-  let color = d3.scaleLinear().domain([-1, 5]).range(BACKGROUND_RANGE).interpolate(d3.interpolateHcl);
 
   let pack = d3
     .pack()
@@ -202,24 +170,53 @@ function drawCircle(jsonFile) {
       const k = diameter / v[2];
       view = v;
       node.attr("transform", function (d) {
-        return "translate(" + (d.x - v[0]) * k + "," + (d.y - v[1]) * k + ")";
+        const x = (d.x - v[0]) * k;
+        const y = (d.y - v[1]) * k;
+        return `translate(${x},${y})`;
       });
       circle.attr("r", function (d) {
         return d.r * k;
       });
     }
   });
-  // } // loadNewNodes
 } // drawCircle
+
+// ----------------- DOM/event handlers
 
 function modeCheckboxHandler(event) {
   const value = event.target.value;
-  if (value === "normal") {
-    drawCircle(NORMAL_JSON_FILE);
-  } else if (value === "elements") {
-    drawCircle(ELEMENTS_JSON_FILE);
+  if (value === MODE_NORMAL) {
+    updateNormalMode();
+  } else {
+    updateElementsMode();
   }
 }
 
 document.getElementById("checkbox-normal").addEventListener("change", modeCheckboxHandler);
 document.getElementById("checkbox-elements").addEventListener("change", modeCheckboxHandler);
+
+/*
+const backdrop = document.querySelector(".backdrop");
+const toggleButton = document.querySelector(".toggle-button");
+const sideNav = document.querySelector(".side-nav");
+
+toggleButton.addEventListener("click", function () {
+  sideNav.classList.add("open");
+  backdrop.style.display = "block";
+  setTimeout(function () {
+    backdrop.classList.add("open");
+  }, 10);
+});
+
+backdrop.addEventListener("click", function () {
+  sideNav.classList.remove("open");
+  closeModal();
+});
+
+function closeModal() {
+  backdrop.classList.remove("open");
+  setTimeout(function () {
+    backdrop.style.display = "none";
+  }, 200);
+}
+*/
