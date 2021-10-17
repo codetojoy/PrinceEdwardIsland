@@ -181,14 +181,40 @@ function drawCircle(jsonFile) {
   });
 } // drawCircle
 
+// ----------------- DOM/event handlers
+
 function modeCheckboxHandler(event) {
   const value = event.target.value;
   if (value === MODE_NORMAL) {
-    drawCircle(NORMAL_JSON_FILE);
-  } else if (value === MODE_ELEMENTS) {
-    drawCircle(ELEMENTS_JSON_FILE);
+    updateNormalMode();
+  } else {
+    updateElementsMode();
   }
 }
 
 document.getElementById("checkbox-normal").addEventListener("change", modeCheckboxHandler);
 document.getElementById("checkbox-elements").addEventListener("change", modeCheckboxHandler);
+
+const backdrop = document.querySelector(".backdrop");
+const toggleButton = document.querySelector(".toggle-button");
+const sideNav = document.querySelector(".side-nav");
+
+toggleButton.addEventListener("click", function () {
+  sideNav.classList.add("open");
+  backdrop.style.display = "block";
+  setTimeout(function () {
+    backdrop.classList.add("open");
+  }, 10);
+});
+
+backdrop.addEventListener("click", function () {
+  sideNav.classList.remove("open");
+  closeModal();
+});
+
+function closeModal() {
+  backdrop.classList.remove("open");
+  setTimeout(function () {
+    backdrop.style.display = "none";
+  }, 200);
+}
