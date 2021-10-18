@@ -192,5 +192,11 @@ function modeCheckboxHandler(event) {
   }
 }
 
-document.getElementById("checkbox-normal").addEventListener("change", modeCheckboxHandler);
-document.getElementById("checkbox-elements").addEventListener("change", modeCheckboxHandler);
+if (document) {
+  if (document.getElementById("checkbox-normal")) {
+    document.getElementById("checkbox-normal").addEventListener("change", modeCheckboxHandler);
+  }
+  if (document.getElementById("checkbox-elements")) {
+    document.getElementById("checkbox-elements").addEventListener("change", modeCheckboxHandler);
+  }
+}
