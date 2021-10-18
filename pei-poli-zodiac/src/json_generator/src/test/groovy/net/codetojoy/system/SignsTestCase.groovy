@@ -8,11 +8,6 @@ class SignsTestCase {
     def signs = new Signs()
 
     @Test
-    void testCanary() {
-        assertEquals(2+2, 4)
-    }
-
-    @Test
     void testGetDisplaySign_basic() {
         def dataSign = "aries"
 

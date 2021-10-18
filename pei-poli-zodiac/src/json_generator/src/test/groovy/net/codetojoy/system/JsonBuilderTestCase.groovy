@@ -11,11 +11,6 @@ class JsonBuilderTestCase {
     def jsonBuilder = new JsonBuilder()
 
     @Test
-    void testCanary() {
-        assertEquals(2+2, 4)
-    }
-
-    @Test
     void testBuildNormal() {
         def name = "Mozart"
         def zodiac = "Aquarius"
@@ -23,7 +18,7 @@ class JsonBuilderTestCase {
         def riding = "Salzburg"
         def party = "PC" 	// which party would Mozart join?
 
-        def info = new Info(name: name, zodiac: zodiac,
+        def info = new Info(honourific: "Hon.", name: name, zodiac: zodiac,
                             birthday: birthday, riding: riding,
                            party: party, hasSign: true)
 	def infos = []
@@ -31,6 +26,8 @@ class JsonBuilderTestCase {
 
 	// test
 	def result = jsonBuilder.buildNormal(infos)
+
+	assertEquals(4, 2+2)
 
 	// this is ridiculous, but YOLO:
 
@@ -48,7 +45,7 @@ class JsonBuilderTestCase {
 	    def grandChild = child["children"][0]
 
             if (sign == "Aquarius") {
-		assertEquals(grandChild["name"], "Mozart")
+		assertEquals(grandChild["name"], "Hon. Mozart")
 		assertEquals(grandChild["party"], "PC")
 		assertEquals(grandChild["size"], 1000)
 	    } else {
@@ -67,7 +64,7 @@ class JsonBuilderTestCase {
         def riding = "Salzburg"
         def party = "PC" 	// which party would Mozart join?
 
-        def info = new Info(name: name, zodiac: zodiac,
+        def info = new Info(honourific: "", name: name, zodiac: zodiac,
                             birthday: birthday, riding: riding,
                            party: party, hasSign: true)
 	def infos = []

@@ -16,6 +16,10 @@ dependencies {
     testImplementation group: 'org.mockito', name: 'mockito-all', version: '1.9.5'
 }
 
+test {
+    includes ['**/*TestCase.groovy']
+}
+
 project.ext.stagingDir = 'staging'
 
 installDist.doFirst {

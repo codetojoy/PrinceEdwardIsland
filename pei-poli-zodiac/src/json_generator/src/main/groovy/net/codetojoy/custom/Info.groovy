@@ -1,9 +1,8 @@
 
 package net.codetojoy.custom
 
-import net.codetojoy.utils.Utils
-
 class Info {
+    def honourific = ""
     def name = ""
     def zodiac = ""
     def birthday = ""
@@ -11,13 +10,8 @@ class Info {
     def party = ""
     def hasSign = false
 
-    static def utils = new Utils()
-
-    static String getHeader() {
-        utils.buildList(["Name","Zodiac","Birthday","Riding","Party"])
-    }
-
-    String toString() {
-        utils.buildList([name, zodiac, birthday, riding, party])
+    def getQualifiedName() {
+        def prefix = (honourific) ? honourific + " " : ""
+        return "${prefix}${name}"
     }
 }

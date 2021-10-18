@@ -46,7 +46,7 @@ class JsonBuilder {
             def thisDisplaySign = new Signs().getDisplaySign(dataSign)
             if (thisDisplaySign == displaySign) {
                 def person = [:]
-                person[NAME] = info.name
+                person[NAME] = info.getQualifiedName()
                 person[PARTY] = info.party
                 person[SIZE] = getSizeForSign(infos, dataSign)
                 return person
