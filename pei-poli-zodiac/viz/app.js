@@ -98,7 +98,7 @@ function drawCircle(jsonFile) {
 
     let focus = root,
       nodes = pack(root).descendants(),
-      view;
+      currentView;
 
     let circle = g
       .selectAll("circle")
@@ -137,6 +137,15 @@ function drawCircle(jsonFile) {
 
     zoomTo([root.x, root.y, root.r * 2 + margin]);
 
+    // called when user clicks on a circle
+    // sets up a tween animation where `zoomTo` is called repeatedly
+    // focus - target
+    // view
+    //
+    // https://observablehq.com/@d3/d3-interpolatezoom
+    // - interpolation uses start, end view
+    // - `view` is defined by x, y, width
+    //    - x,y is center
     function zoom(d) {
       focus = d;
 
@@ -144,7 +153,9 @@ function drawCircle(jsonFile) {
         .transition()
         .duration(d3.event.altKey ? 7500 : 750)
         .tween("zoom", function (d) {
-          let i = d3.interpolateZoom(view, [focus.x, focus.y, focus.r * 2 + margin]);
+          const targetView = [focus.x, focus.y, focus.r * 2 + margin];
+          const i = d3.interpolateZoom(currentView, targetView);
+          // let i = d3.interpolateZoom(currentView, [focus.x, focus.y, focus.r * 2 + margin]);
           return function (t) {
             zoomTo(i(t));
           };
@@ -166,9 +177,15 @@ function drawCircle(jsonFile) {
         });
     }
 
+    // v is a view: [node.x, node.y, width]
+    // side-effects:
+    //    each node (i.e. circle, text selection) is translated
+    //    currentView is updated
+    //    circle selection: radius scaled
+    // see link above about interpolationZoom
     function zoomTo(v) {
       const k = diameter / v[2];
-      view = v;
+      currentView = v;
       node.attr("transform", function (d) {
         const x = (d.x - v[0]) * k;
         const y = (d.y - v[1]) * k;
