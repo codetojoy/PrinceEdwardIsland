@@ -3,6 +3,9 @@
 
 * map of PEI with Zodiac signs?
 * federal: https://www.ourcommons.ca/members/en/search
+* other viz
+    - https://observablehq.com/@d3/radial-stacked-bar-chart
+    - https://observablehq.com/@d3/treemap
 
 ### next
 

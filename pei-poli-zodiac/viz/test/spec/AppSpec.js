@@ -1,3 +1,6 @@
+import * as app from "../../app.js";
+import * as c from "../../const.js";
+
 describe("App", function () {
   beforeEach(function () {});
 
@@ -6,15 +9,15 @@ describe("App", function () {
       const d = { depth: 0, children: [{ name: "mozart" }] };
 
       // test
-      const result = getFillColor(d);
+      const result = app.getFillColor(d);
       expect(result).toEqual("rgb(220, 225, 147)");
     });
 
     it("should be able to get color for leaf node", function () {
-      const d = { data: { party: GREEN_PARTY } };
+      const d = { data: { party: c.GREEN_PARTY } };
 
       // test
-      const result = getFillColor(d);
+      const result = app.getFillColor(d);
 
       expect(result).toEqual(d3.rgb(64, 157, 74));
     });
@@ -32,7 +35,7 @@ describe("App", function () {
       };
 
       // test
-      const result = hasManyChildren(d);
+      const result = app.hasManyChildren(d);
 
       expect(result).toBeTruthy();
     });
@@ -48,7 +51,7 @@ describe("App", function () {
       };
 
       // test
-      const result = hasManyChildren(d);
+      const result = app.hasManyChildren(d);
 
       expect(result).toBeFalsy();
     });

@@ -1,46 +1,15 @@
-// ----------
+import * as c from "./const.js";
 
-const NORMAL_JSON_FILE = "./zodiac.json";
-const ELEMENTS_JSON_FILE = "./zodiac_elements.json";
-const BACKGROUND_LIGHT = "hsl(61,80%,80%)";
-const BACKGROUND_DARK = "hsl(80,30%,40%)";
-const BACKGROUND_RANGE = [BACKGROUND_LIGHT, BACKGROUND_DARK];
-
-const GREEN_PARTY = "Green";
-const LIBERAL_PARTY = "Liberal";
-const NDP_PARTY = "NDP";
-const PC_PARTY = "PC";
-const UNKNOWN_PARTY = "Unknown";
-
-const NUM_SIBLINGS_FOR_SMALL_TEXT = 4;
-const NUM_CHARS_FOR_TINY_TEXT = 14;
-
-const MODE_NORMAL = "normal";
-const MODE_ELEMENTS = "elements";
-
-// colours sampled from party websites
-const PARTY_COLOR_MAP = {
-  [GREEN_PARTY]: d3.rgb(64, 157, 74),
-  [LIBERAL_PARTY]: d3.rgb(224, 31, 43),
-  [NDP_PARTY]: d3.rgb(243, 50, 48),
-  [PC_PARTY]: d3.rgb(46, 133, 196),
-  [UNKNOWN_PARTY]: d3.color("white"),
-};
-
-const color = d3.scaleLinear().domain([-1, 5]).range(BACKGROUND_RANGE).interpolate(d3.interpolateHcl);
-
-// ----------
-
-function getFillColor(d) {
-  return d.children ? color(d.depth) : PARTY_COLOR_MAP[d.data.party];
+export function getFillColor(d) {
+  return d.children ? c.color(d.depth) : c.PARTY_COLOR_MAP[d.data.party];
 }
 
-function hasManyChildren(d) {
+export function hasManyChildren(d) {
   let result = false;
   const isLeaf = d.data.children == null;
   if (isLeaf && d.parent && d.parent.data && d.parent.data.children) {
     const numNodes = d.parent.data.children.length;
-    result = numNodes >= NUM_SIBLINGS_FOR_SMALL_TEXT;
+    result = numNodes >= c.NUM_SIBLINGS_FOR_SMALL_TEXT;
   }
   return result;
 }
@@ -49,7 +18,7 @@ function getTextClass(d) {
   let result = "label";
 
   if (hasManyChildren(d)) {
-    if (d.data.name && d.data.name.length >= NUM_CHARS_FOR_TINY_TEXT) {
+    if (d.data.name && d.data.name.length >= c.NUM_CHARS_FOR_TINY_TEXT) {
       result = "label-tiny";
     } else {
       result = "label-small";
@@ -61,12 +30,12 @@ function getTextClass(d) {
 
 // ----------
 
-function updateNormalMode() {
-  drawCircle(NORMAL_JSON_FILE);
+export function updateNormalMode() {
+  drawCircle(c.NORMAL_JSON_FILE);
 }
 
 function updateElementsMode() {
-  drawCircle(ELEMENTS_JSON_FILE);
+  drawCircle(c.ELEMENTS_JSON_FILE);
 }
 
 function drawCircle(jsonFile) {
@@ -131,7 +100,7 @@ function drawCircle(jsonFile) {
 
     let node = g.selectAll("circle,text");
 
-    svg.style("background", color(-1)).on("click", function () {
+    svg.style("background", c.color(-1)).on("click", function () {
       zoom(root);
     });
 
@@ -202,7 +171,7 @@ function drawCircle(jsonFile) {
 
 function modeCheckboxHandler(event) {
   const value = event.target.value;
-  if (value === MODE_NORMAL) {
+  if (value === c.MODE_NORMAL) {
     updateNormalMode();
   } else {
     updateElementsMode();

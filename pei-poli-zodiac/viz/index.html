@@ -25,9 +25,15 @@
     <script src="https://d3js.org/d3.v4.min.js"></script>
 
     <title>PEI MLAs Zodiac</title>
+
+    <script type="module">
+      import { updateNormalMode } from "./app.js";
+
+      window.addEventListener("DOMContentLoaded", updateNormalMode, false);
+    </script>
   </head>
 
-  <body onload="updateNormalMode()">
+  <body>
     <div class="backdrop"></div>
     <div class="container">
       <div class="header">
@@ -67,7 +73,6 @@
         </div>
       </div>
     </div>
-    <script src="app.js"></script>
     <script src="nav.js"></script>
   </body>
 </html>
