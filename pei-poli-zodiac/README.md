@@ -28,12 +28,15 @@
 
 ### Workflow for data update
 
-- edit `./zodiac.csv`
-- `cd ~/src/json_generator`
-- `./run.sh` will run unit tests and generate the JSON files
-- `cd ~/viz`
-- `./server.sh` will run local HTTP server for testing
-- commit to master branch
-- cd ~/../PrinceEdwardIsland-gh-pages
-- edit `refresh-zodiac.sh` so that paths are correct
-- `./publish.sh` will copy files, run version info, and commit to `gh-pages`
+* edit `./zodiac.csv`
+* `cd ~/src/json_generator`
+    - `./run.sh` will run unit tests and generate the JSON files
+* `cd ~/src/validator`
+    - `./validate.sh` will run integration tests on JSON files
+* `cd ~/viz`
+* `./server.sh` will run local HTTP server for testing
+    - browse to `http://localhost:8000/test/SpecRunner.html` to run Jasmine tests for JS
+* commit to master branch
+* cd ~/../PrinceEdwardIsland-gh-pages
+    - edit `refresh-zodiac.sh` so that paths are correct
+    - `./publish.sh` will copy files, run version info, and commit to `gh-pages`
