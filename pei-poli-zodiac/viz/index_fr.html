@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta
       name="description"
-      content="Zodiac signs for Prince Edward Island (PEI) Members of Legislative Assembly (MLAs)"
+      content="Signes du zodiaque pour les membres de l'Assemblée législative de l'Île-du-Prince-Édouard"
     />
     <meta
       property="og:image"
@@ -13,10 +13,13 @@
     />
     <meta
       property="og:description"
-      content="Zodiac signs for Prince Edward Island (PEI) Members of Legislative Assembly (MLAs)"
+      content="Signes du zodiaque pour les membres de l'Assemblée législative de l'Île-du-Prince-Édouard"
     />
     <meta property="og:url" content="https://codetojoy.github.io/PrinceEdwardIsland/web/pei-poli-zodiac/index.html" />
-    <meta property="og:title" content="PEI MLAs, grouped by Zodiac sign" />
+    <meta
+      property="og:title"
+      content="Les membres de l'Assemblée législative de l'Île-du-Prince-Édouard, regroupés par signe du zodiaque"
+    />
     <meta property="og:type" content="website" />
     <link rel="shortcut icon" href="./favicon.ico" />
     <link rel="stylesheet" href="zodiac.css" />
@@ -24,7 +27,7 @@
     <!-- d3 -->
     <script src="https://d3js.org/d3.v4.min.js"></script>
 
-    <title>PEI MLAs Zodiac</title>
+    <title>Les membres de l'Assemblée législative de l'Î.-P.-É., regroupés par signe du zodiaque</title>
 
     <script type="module">
       import { updateNormalMode } from "./app.js";
@@ -46,28 +49,28 @@
       <nav class="side-nav">
         <ul class="side-nav__items">
           <li class="side-nav__item">
-            <a href="./index_fr.html">Home</a>
+            <a href="./index_fr.html">Page&nbsp;d'accueil</a>
           </li>
           <li class="side-nav__item">
             <a href="./index.html">Anglais</a>
           </li>
           <li class="side-nav__item">
-            <a href="./info_fr.html">About</a>
+            <a href="./info_fr.html">À&nbsp;propos</a>
           </li>
           <li class="side-nav__item">
-            <a href="./other_fr.html">Other&nbsp;Projects</a>
+            <a href="./other_fr.html">Autres&nbsp;projets</a>
           </li>
         </ul>
       </nav>
       <div class="content">
         <div class="main-info">
-          <h1>Prince Edward Island MLAs, grouped by Zodiac sign</h1>
-          <p>French Click on circles to zoom in/out</p>
+          <h3>Les membres de l'Assemblée législative de l'Î.-P.-É., regroupés par signe du zodiaque</h3>
+          <p>Cliquez sur les cercles pour zoomer</p>
           <div class="mode-controls">
             <input type="radio" id="checkbox-normal" name="mode" value="normal" checked />
-            <label for="checkbox-normal">Signs</label>
+            <label for="checkbox-normal">Signes</label>
             <input type="radio" id="checkbox-elements" name="mode" value="elements" />
-            <label for="checkbox-elements">Elements</label>
+            <label for="checkbox-elements">Éléments</label>
           </div>
         </div>
         <p></p>

@@ -31,6 +31,11 @@ h1 {
   font-size: 1.8rem;
 }
 
+h3 {
+  color: var(--primary);
+  font-size: 1rem;
+}
+
 p {
   color: var(--primary);
   font-size: 1.6rem;
