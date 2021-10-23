@@ -2,6 +2,7 @@
 package net.codetojoy.system
 
 import net.codetojoy.custom.Config
+import net.codetojoy.system.json.*
 
 class Runner {
     static final def MODE_NORMAL = "normal"
@@ -33,12 +34,11 @@ class Runner {
 
     def generateJson(def mode, def infos, def outputFile) {
         def json = null
-        def jsonBuilder = new JsonBuilder()
 
         if (mode.trim().toLowerCase() == MODE_NORMAL) {
-            json = jsonBuilder.buildNormal(infos)
+            json = new JsonNormalBuilder().buildNormal(infos)
         } else {
-            json = jsonBuilder.buildWithElements(infos)
+            json = new JsonElementBuilder().buildWithElements(infos)
         }
 
         new File(outputFile).withWriter { writer ->

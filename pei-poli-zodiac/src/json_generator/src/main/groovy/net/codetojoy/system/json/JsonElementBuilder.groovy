@@ -1,7 +1,10 @@
 
-package net.codetojoy.system
+package net.codetojoy.system.json
 
 import groovy.json.*
+
+import static BuilderConstants.* 
+import net.codetojoy.system.Signs
 
 /*
 {
@@ -18,16 +21,7 @@ import groovy.json.*
 },
 */
 
-class JsonBuilder {
-    static final def NAME = "name"
-    static final def PARTY = "party"
-    static final def SIZE = "size"
-    static final def UNKNOWN_SIGN = "unknown"
-    static final def CHILDREN = "children"
-    static final def ZODIAC = "zodiac"
-
-    static final def NONE = "None here!"
-    static final def DEFAULT_SIZE = 1000
+class JsonElementBuilder {
 
     def getSizeForSign(def infos, def sign) {
         def result = DEFAULT_SIZE
@@ -60,6 +54,7 @@ class JsonBuilder {
         return children
     }
 
+/*
     def buildChildren(def infos) {
         def children = []
         Signs.DISPLAY_SIGNS.each { sign ->
@@ -72,13 +67,7 @@ class JsonBuilder {
         }
         return children
     }
-
-    def buildNormal(def infos) {
-        def children = buildChildren(infos)
-        def jsonMap = ["name" : "zodiac", "children" : children]
-        def json = JsonOutput.toJson(jsonMap)
-        return JsonOutput.prettyPrint(json)
-    }
+*/
 
     def buildChildrenWithElement(def infos, def element) {
         def children = []
