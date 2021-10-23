@@ -57,6 +57,12 @@ Water: Cancer, Scorpio, Pisces
 Air: Libra, Aquarius, Gemini
 Earth: Capricorn, Taurus, Virgo
 */
+  static final def FIRE = "Fire"
+  static final def WATER = "Water"
+  static final def AIR = "Air"
+  static final def EARTH = "Earth"
+
+  static final def ELEMENTS = [FIRE, WATER, AIR, EARTH]
 
   static final def ELEMENT_DISPLAY_SIGNS_MAP = [
       "Fire" : ["Aries", "Leo", "Sagittarius"],

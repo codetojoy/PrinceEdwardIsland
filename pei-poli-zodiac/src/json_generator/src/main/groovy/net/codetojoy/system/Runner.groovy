@@ -32,13 +32,13 @@ class Runner {
         return infos
     }
 
-    def generateJson(def mode, def infos, def outputFile) {
+    def generateJson(def mode, def infos, def outputFile, def locale) {
         def json = null
 
         if (mode.trim().toLowerCase() == MODE_NORMAL) {
-            json = new JsonNormalBuilder().buildNormal(infos)
+            json = new JsonNormalBuilder().buildNormal(infos, locale)
         } else {
-            json = new JsonElementBuilder().buildWithElements(infos)
+            json = new JsonElementBuilder().buildWithElements(infos, locale)
         }
 
         new File(outputFile).withWriter { writer ->
@@ -47,12 +47,12 @@ class Runner {
         }
     }
 
-    def run(def mode, def infile, def outfile) {
+    def run(def mode, def infile, def outfile, def locale) {
         if ((! mode.trim().toLowerCase() == MODE_NORMAL) && (! mode.trim().toLowerCase() == MODE_ELEMENTS)) {
             throw new IllegalArgumentException("unknown mode: $mode")
         }
         def infos = buildInfos(infile)
-        generateJson(mode, infos, outfile)
+        generateJson(mode, infos, outfile, locale)
     }
 
     def static void main(String[] args) {
@@ -65,7 +65,8 @@ class Runner {
         def infile = args[1]
         assert new File(infile).exists()
         def outfile = args[2]
+        def locale = new net.codetojoy.system.Locale(args[3])
 
-        new Runner().run(mode, infile, outfile)
+        new Runner().run(mode, infile, outfile, locale)
     }
 }

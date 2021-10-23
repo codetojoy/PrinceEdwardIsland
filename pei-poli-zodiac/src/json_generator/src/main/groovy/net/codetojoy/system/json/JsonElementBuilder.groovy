@@ -3,7 +3,7 @@ package net.codetojoy.system.json
 
 import groovy.json.*
 
-import static BuilderConstants.* 
+import static BuilderConstants.*
 import net.codetojoy.system.Signs
 
 /*
@@ -54,28 +54,13 @@ class JsonElementBuilder {
         return children
     }
 
-/*
-    def buildChildren(def infos) {
-        def children = []
-        Signs.DISPLAY_SIGNS.each { sign ->
-            if (sign != Signs.UNKNOWN_DISPLAY_SIGN) {
-                def childMap = [:]
-                childMap[NAME] = sign
-                childMap[CHILDREN] = buildChildrenForSign(infos, sign)
-                children << childMap
-            }
-        }
-        return children
-    }
-*/
-
-    def buildChildrenWithElement(def infos, def element) {
+    def buildChildrenWithElement(def infos, def element, def locale) {
         def children = []
         def signs = new Signs()
         Signs.DISPLAY_SIGNS.each { sign ->
             if (signs.isSignInElement(sign, element)) {
                 def childMap = [:]
-                childMap[NAME] = sign
+                childMap[NAME] = locale.get(sign)
                 childMap[CHILDREN] = buildChildrenForSign(infos, sign)
                 children << childMap
             }
@@ -83,19 +68,19 @@ class JsonElementBuilder {
         return children
     }
 
-    def buildWithElements(def infos) {
+    def buildWithElements(def infos, def locale) {
         // this is not efficient, but it's a small list
-        def fireChildren = buildChildrenWithElement(infos, "Fire")
-        def waterChildren = buildChildrenWithElement(infos, "Water")
-        def airChildren = buildChildrenWithElement(infos, "Air")
-        def earthChildren = buildChildrenWithElement(infos, "Earth")
+        def fireChildren = buildChildrenWithElement(infos, Signs.FIRE, locale)
+        def waterChildren = buildChildrenWithElement(infos, Signs.WATER, locale)
+        def airChildren = buildChildrenWithElement(infos, Signs.AIR, locale)
+        def earthChildren = buildChildrenWithElement(infos, Signs.EARTH, locale)
 
         def jsonMap = [
             "name" : "zodiac", "children" : [
-                ["name": "Fire", "children" : fireChildren],
-                ["name": "Water", "children" : waterChildren],
-                ["name": "Air", "children" : airChildren],
-                ["name": "Earth", "children" : earthChildren],
+                ["name": locale.get(Signs.FIRE), "children" : fireChildren],
+                ["name": locale.get(Signs.WATER), "children" : waterChildren],
+                ["name": locale.get(Signs.AIR), "children" : airChildren],
+                ["name": locale.get(Signs.EARTH), "children" : earthChildren],
             ]
         ]
         def json = JsonOutput.toJson(jsonMap)

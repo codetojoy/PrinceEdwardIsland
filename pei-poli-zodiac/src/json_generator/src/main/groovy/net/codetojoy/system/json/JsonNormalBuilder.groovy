@@ -54,12 +54,12 @@ class JsonNormalBuilder {
         return children
     }
 
-    def buildChildren(def infos) {
+    def buildChildren(def infos, def locale) {
         def children = []
         Signs.DISPLAY_SIGNS.each { sign ->
             if (sign != Signs.UNKNOWN_DISPLAY_SIGN) {
                 def childMap = [:]
-                childMap[NAME] = sign
+                childMap[NAME] = locale.get(sign)
                 childMap[CHILDREN] = buildChildrenForSign(infos, sign)
                 children << childMap
             }
@@ -67,8 +67,8 @@ class JsonNormalBuilder {
         return children
     }
 
-    def buildNormal(def infos) {
-        def children = buildChildren(infos)
+    def buildNormal(def infos, def locale) {
+        def children = buildChildren(infos, locale)
         def jsonMap = ["name" : "zodiac", "children" : children]
         def json = JsonOutput.toJson(jsonMap)
         return JsonOutput.prettyPrint(json)
