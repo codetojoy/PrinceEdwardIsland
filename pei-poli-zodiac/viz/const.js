@@ -1,6 +1,11 @@
-
 export const NORMAL_JSON_FILE = "./zodiac.json";
 export const ELEMENTS_JSON_FILE = "./zodiac_elements.json";
+
+export const NORMAL_JSON_FR_FILE = "./zodiac_fr.json";
+export const ELEMENTS_JSON_FR_FILE = "./zodiac_elements_fr.json";
+
+export const FRENCH_HTML_FILE = "index_fr.html";
+
 export const BACKGROUND_LIGHT = "hsl(61,80%,80%)";
 export const BACKGROUND_DARK = "hsl(80,30%,40%)";
 export const BACKGROUND_RANGE = [BACKGROUND_LIGHT, BACKGROUND_DARK];
@@ -27,4 +32,3 @@ export const PARTY_COLOR_MAP = {
 };
 
 export const color = d3.scaleLinear().domain([-1, 5]).range(BACKGROUND_RANGE).interpolate(d3.interpolateHcl);
-

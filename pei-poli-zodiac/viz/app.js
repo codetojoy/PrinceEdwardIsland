@@ -28,6 +28,36 @@ function getTextClass(d) {
   return result;
 }
 
+var myLocation = {
+  getCurrentURL: function () {
+    return window.location.href;
+  },
+};
+
+function isFrenchMode() {
+  const fileName = myLocation.getCurrentURL().split("/").slice(-1);
+  const isFrench = fileName == c.FRENCH_HTML_FILE;
+  return isFrench;
+}
+
+function getLocalizedJsonFile(jsonFile) {
+  let result = jsonFile;
+  if (isFrenchMode()) {
+    switch (jsonFile) {
+      case c.NORMAL_JSON_FILE:
+        result = c.NORMAL_JSON_FR_FILE;
+        break;
+      case c.ELEMENTS_JSON_FILE:
+        result = c.ELEMENTS_JSON_FR_FILE;
+        break;
+      default:
+        result = jsonFile;
+        break;
+    }
+  }
+  return result;
+}
+
 // ----------
 
 export function updateNormalMode() {
@@ -53,7 +83,7 @@ function drawCircle(jsonFile) {
     .size([diameter - margin, diameter - margin])
     .padding(2);
 
-  d3.json(jsonFile, function (error, root) {
+  d3.json(getLocalizedJsonFile(jsonFile), function (error, root) {
     if (error) throw error;
 
     root = d3
