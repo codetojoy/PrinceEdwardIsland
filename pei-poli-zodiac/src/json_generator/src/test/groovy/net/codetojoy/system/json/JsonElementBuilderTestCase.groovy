@@ -154,7 +154,7 @@ class JsonElementBuilderTestCase {
             assertEquals(child["children"].size(), 1)
             def grandChild = child["children"][0]
 
-            assertEquals(grandChild["name"], BuilderConstants.NONE)
+            assertEquals(grandChild["name"], locale.get(BuilderConstants.NONE))
             assertEquals(grandChild["party"], "unknown")
             assertEquals(grandChild["size"], 1000)
         }
@@ -165,7 +165,7 @@ class JsonElementBuilderTestCase {
             assertEquals(child["children"].size(), 1)
             def grandChild = child["children"][0]
 
-            assertEquals(grandChild["name"], BuilderConstants.NONE)
+            assertEquals(grandChild["name"], locale.get(BuilderConstants.NONE))
             assertEquals(grandChild["party"], "unknown")
             assertEquals(grandChild["size"], 1000)
         }
@@ -181,7 +181,7 @@ class JsonElementBuilderTestCase {
                 assertEquals(grandChild["party"], "PC")
                 assertEquals(grandChild["size"], 1000)
             } else {
-                assertEquals(grandChild["name"], BuilderConstants.NONE)
+                assertEquals(grandChild["name"], locale.get(BuilderConstants.NONE))
                 assertEquals(grandChild["party"], "unknown")
                 assertEquals(grandChild["size"], 1000)
             }
@@ -193,7 +193,7 @@ class JsonElementBuilderTestCase {
             assertEquals(child["children"].size(), 1)
             def grandChild = child["children"][0]
 
-            assertEquals(grandChild["name"], BuilderConstants.NONE)
+            assertEquals(grandChild["name"], locale.get(BuilderConstants.NONE))
             assertEquals(grandChild["party"], "unknown")
             assertEquals(grandChild["size"], 1000)
         }

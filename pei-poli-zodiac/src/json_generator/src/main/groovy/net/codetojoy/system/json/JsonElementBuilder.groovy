@@ -21,8 +21,9 @@ import net.codetojoy.system.Signs
 },
 */
 
-class JsonElementBuilder {
+class JsonElementBuilder extends BaseBuilder {
 
+/*
     def getSizeForSign(def infos, def sign) {
         def result = DEFAULT_SIZE
         def count = infos.findAll{ it.zodiac == sign}.size()
@@ -30,11 +31,11 @@ class JsonElementBuilder {
         return result
     }
 
-    def buildUnknown() {
-        return ["$NAME": NONE, "$PARTY": UNKNOWN_SIGN, "$SIZE": DEFAULT_SIZE]
+    def buildUnknown(def locale) {
+        return ["$NAME": locale.get(NONE), "$PARTY": UNKNOWN_SIGN, "$SIZE": DEFAULT_SIZE]
     }
 
-    def buildChildrenForSign(def infos, def displaySign) {
+    def buildChildrenForSign(def infos, def displaySign, def locale) {
         def children = infos.findResults { info ->
             def dataSign = info.zodiac
             def thisDisplaySign = new Signs().getDisplaySign(dataSign)
@@ -49,10 +50,11 @@ class JsonElementBuilder {
             }
         }
         if (children.isEmpty()) {
-            children << buildUnknown()
+            children << buildUnknown(locale)
         }
         return children
     }
+*/
 
     def buildChildrenWithElement(def infos, def element, def locale) {
         def children = []
@@ -61,7 +63,7 @@ class JsonElementBuilder {
             if (signs.isSignInElement(sign, element)) {
                 def childMap = [:]
                 childMap[NAME] = locale.get(sign)
-                childMap[CHILDREN] = buildChildrenForSign(infos, sign)
+                childMap[CHILDREN] = buildChildrenForSign(infos, sign, locale)
                 children << childMap
             }
         }

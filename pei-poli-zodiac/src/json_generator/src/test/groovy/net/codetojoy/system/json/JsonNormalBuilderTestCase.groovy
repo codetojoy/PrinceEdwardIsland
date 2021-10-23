@@ -96,7 +96,7 @@ class JsonBuilderTestCase {
                 assertEquals(grandChild["party"], "PC")
                 assertEquals(grandChild["size"], 1000)
             } else {
-                assertEquals(grandChild["name"], BuilderConstants.NONE)
+                assertEquals(grandChild["name"], locale.get(BuilderConstants.NONE))
                 assertEquals(grandChild["party"], "unknown")
                 assertEquals(grandChild["size"], 1000)
             }

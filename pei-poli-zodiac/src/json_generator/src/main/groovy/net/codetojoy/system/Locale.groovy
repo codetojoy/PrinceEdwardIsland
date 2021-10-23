@@ -1,6 +1,8 @@
 
 package net.codetojoy.system
 
+import net.codetojoy.system.json.BuilderConstants
+
 // TODO: use property files! this is brutal
 class Locale {
     def mode
@@ -27,6 +29,8 @@ class Locale {
         translationMap["Water"] = "Eau"
         translationMap["Earth"] = "Terre"
         translationMap["Air"] = "Air"
+
+        translationMap[BuilderConstants.NONE] = "Aucun ici!"
     }
 
     def getInverse(def t) {
