@@ -58,6 +58,23 @@ function getLocalizedJsonFile(jsonFile) {
   return result;
 }
 
+function getTextForLegend(legendKey) {
+  if (isFrenchMode()) {
+    return c.LEGEND_MAP[legendKey].fr;
+  } else {
+    return legendKey;
+  }
+}
+
+function getDeltaForLegend(legendKey) {
+  return c.LEGEND_MAP[legendKey].delta;
+}
+
+function getColorForLegend(legendKey) {
+  const colorMap = c.PARTY_COLOR_MAP;
+  return colorMap[c.LEGEND_MAP[legendKey].code];
+}
+
 // ----------
 
 export function updateNormalMode() {
@@ -66,6 +83,52 @@ export function updateNormalMode() {
 
 function updateElementsMode() {
   drawCircle(c.ELEMENTS_JSON_FILE);
+}
+
+function drawHorizontalLegend() {
+  let svg = d3.select("#legend");
+  svg.append("rect").attr("height", "100%").attr("width", "100%").attr("fill", d3.color(c.BACKGROUND_LIGHT));
+
+  let keys = [c.GREEN_PARTY_LEGEND, c.LIBERAL_PARTY_LEGEND, c.PC_PARTY_LEGEND];
+
+  const firstDotX = 210;
+  const firstDotY = 20;
+  const radius = 7;
+
+  svg
+    .selectAll("mydots")
+    .data(keys)
+    .enter()
+    .append("circle")
+    .attr("cx", function (d, i) {
+      return firstDotX + i * getDeltaForLegend(d);
+    })
+    .attr("cy", firstDotY)
+    .attr("r", radius)
+    .style("fill", function (d) {
+      return getColorForLegend(d);
+    });
+
+  const firstLabelX = firstDotX + 20;
+  const firstLabelY = firstDotY + 7;
+
+  svg
+    .selectAll("mylabels")
+    .data(keys)
+    .enter()
+    .append("text")
+    .attr("x", function (d, i) {
+      return firstLabelX + i * getDeltaForLegend(d);
+    })
+    .attr("y", firstLabelY)
+    .style("fill", function (d) {
+      return getColorForLegend(d);
+    })
+    .text(function (d) {
+      return getTextForLegend(d);
+    })
+    .attr("text-anchor", "left")
+    .style("alignment-baseline", "middle");
 }
 
 function drawCircle(jsonFile) {
@@ -127,6 +190,8 @@ function drawCircle(jsonFile) {
       .text(function (d) {
         return d.data.name;
       });
+
+    drawHorizontalLegend();
 
     let node = g.selectAll("circle,text");
 
