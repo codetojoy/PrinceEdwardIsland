@@ -37,6 +37,14 @@ li a {
   font-size: 1.5rem;
 }
 
+.about--list li {
+  font-size: 1.2rem;
+}
+
+.about--list li a {
+  font-size: 1.2rem;
+}
+
 h1 {
   color: var(--primary);
   font-size: 1.8rem;
