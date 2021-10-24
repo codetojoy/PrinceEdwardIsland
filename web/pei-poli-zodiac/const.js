@@ -32,3 +32,17 @@ export const PARTY_COLOR_MAP = {
 };
 
 export const color = d3.scaleLinear().domain([-1, 5]).range(BACKGROUND_RANGE).interpolate(d3.interpolateHcl);
+
+export const GREEN_PARTY_LEGEND_FR = "Vert";
+export const LIBERAL_PARTY_LEGEND_FR = "Libéral";
+export const PC_PARTY_LEGEND_FR = "PC";
+
+export const GREEN_PARTY_LEGEND = "Green";
+export const LIBERAL_PARTY_LEGEND = "Liberal";
+export const PC_PARTY_LEGEND = "PC";
+
+export const LEGEND_MAP = {
+  [PC_PARTY_LEGEND]: { delta: 105, code: [PC_PARTY], fr: [PC_PARTY_LEGEND_FR] },
+  [GREEN_PARTY_LEGEND]: { delta: 105, code: [GREEN_PARTY], fr: [GREEN_PARTY_LEGEND_FR] },
+  [LIBERAL_PARTY_LEGEND]: { delta: 105, code: [LIBERAL_PARTY], fr: [LIBERAL_PARTY_LEGEND_FR] },
+};
