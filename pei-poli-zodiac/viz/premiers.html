@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta
+      name="description"
+      content="Zodiac signs for Prince Edward Island (PEI) Premiers"
+    />
+    <meta
+      property="og:image"
+      content="https://codetojoy.github.io/PrinceEdwardIsland/web/pei-poli-zodiac/images/zodiac_thumbnail.png"
+    />
+    <meta
+      property="og:description"
+      content="Zodiac signs for Prince Edward Island (PEI) Premiers"
+    />
+    <meta property="og:url" content="https://codetojoy.github.io/PrinceEdwardIsland/web/pei-poli-zodiac/index.html" />
+    <meta property="og:title" content="PEI Premiers, grouped by Zodiac sign" />
+    <meta property="og:type" content="website" />
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <link rel="stylesheet" href="zodiac.css" />
+
+    <!-- d3 -->
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
+    <title>PEI Premiers Zodiac</title>
+
+    <script type="module">
+      import { updateNormalMode } from "./app.js";
+
+      window.addEventListener("DOMContentLoaded", updateNormalMode, false);
+    </script>
+  </head>
+
+  <body>
+    <div class="backdrop"></div>
+    <div class="container">
+      <div class="header">
+        <button class="toggle-button">
+          <span class="toggle-button__bar"></span>
+          <span class="toggle-button__bar"></span>
+          <span class="toggle-button__bar"></span>
+        </button>
+      </div>
+      <nav class="side-nav">
+        <ul class="side-nav__items">
+          <li class="side-nav__item">
+            <a href="./index.html">MLAs</a>
+          </li>
+          <li class="side-nav__item">
+            <a href="./premiers.html">Premiers</a>
+          </li>
+          <li class="side-nav__item">
+            <a href="./premiers_fr.html">Français</a>
+          </li>
+          <li class="side-nav__item">
+            <a href="./info.html">About</a>
+          </li>
+          <li class="side-nav__item">
+            <a href="./other.html">All&nbsp;Projects</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="content">
+        <div class="main-info">
+          <h1>Prince Edward Island Premiers, grouped by Zodiac sign</h1>
+          <p>Click on circles to zoom in/out</p>
+          <div class="mode-controls">
+            <input type="radio" id="checkbox-normal" name="mode" value="normal" checked />
+            <label for="checkbox-normal">Signs</label>
+            <input type="radio" id="checkbox-elements" name="mode" value="elements" />
+            <label for="checkbox-elements">Elements</label>
+          </div>
+        </div>
+        <p></p>
+        <div class="my-data-viz">
+          <div class="circle">
+            <svg id="known" width="660" height="660"></svg>
+          </div>
+          <div class="legend">
+            <svg id="legend" width="660" height="50"></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="nav.js"></script>
+  </body>
+</html>

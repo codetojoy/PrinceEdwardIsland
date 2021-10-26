@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta
+      name="description"
+      content="Signes du zodiaque pour les premiers ministres de l'Île-du-Prince-Édouard"
+    />
+    <meta
+      property="og:image"
+      content="https://codetojoy.github.io/PrinceEdwardIsland/web/pei-poli-zodiac/images/zodiac_thumbnail.png"
+    />
+    <meta
+      property="og:description"
+      content="Signes du zodiaque pour les premiers ministres de l'Île-du-Prince-Édouard"
+    />
+    <meta property="og:url" content="https://codetojoy.github.io/PrinceEdwardIsland/web/pei-poli-zodiac/index.html" />
+    <meta
+      property="og:title"
+      content="Les premiers ministres de l'Île-du-Prince-Édouard, regroupés par signe du zodiaque"
+    />
+    <meta property="og:type" content="website" />
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <link rel="stylesheet" href="zodiac.css" />
+
+    <!-- d3 -->
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
+    <title>Les premiers ministres de l'Î.-P.-É., regroupés par signe du zodiaque</title>
+
+    <script type="module">
+      import { updateNormalMode } from "./app.js";
+
+      window.addEventListener("DOMContentLoaded", updateNormalMode, false);
+    </script>
+  </head>
+
+  <body>
+    <div class="backdrop"></div>
+    <div class="container">
+      <div class="header">
+        <button class="toggle-button">
+          <span class="toggle-button__bar"></span>
+          <span class="toggle-button__bar"></span>
+          <span class="toggle-button__bar"></span>
+        </button>
+      </div>
+      <nav class="side-nav">
+        <ul class="side-nav__items">
+          <li class="side-nav__item">
+            <a href="./index_fr.html">MLAs</a>
+          </li>
+          <li class="side-nav__item">
+            <a href="./premiers_fr.html">Premiers</a>
+          </li>
+          <li class="side-nav__item">
+            <a href="./premiers.html">Anglais</a>
+          </li>
+          <li class="side-nav__item">
+            <a href="./premiers_info_fr.html">À&nbsp;propos</a>
+          </li>
+          <li class="side-nav__item">
+            <a href="./other_fr.html">Autres&nbsp;projets</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="content">
+        <div class="main-info">
+          <h3>Les premiers ministres de l'Î.-P.-É., regroupés par signe du zodiaque</h3>
+          <p>Cliquez sur les cercles pour zoomer</p>
+          <div class="mode-controls">
+            <input type="radio" id="checkbox-normal" name="mode" value="normal" checked />
+            <label for="checkbox-normal">Signes</label>
+            <input type="radio" id="checkbox-elements" name="mode" value="elements" />
+            <label for="checkbox-elements">Éléments</label>
+          </div>
+        </div>
+        <p></p>
+        <div class="my-data-viz">
+          <div class="circle">
+            <svg id="known" width="660" height="660"></svg>
+          </div>
+          <div class="legend">
+            <svg id="legend" width="660" height="50"></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="nav.js"></script>
+  </body>
+</html>
