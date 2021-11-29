@@ -11,7 +11,7 @@ cd ../..
 
 git add -u . 
 git add web/pei-poli-zodiac
-# git commit -m "incremental refresh"
-# git push origin gh-pages
+git commit -m "incremental refresh"
+git push origin gh-pages
 
 echo "Ready."
