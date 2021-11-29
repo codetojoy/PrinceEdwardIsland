@@ -1,0 +1,235 @@
+{
+    "name": "zodiac",
+    "children": [
+        {
+            "name": "B\u00e9lier",
+            "children": [
+                {
+                    "name": "Frederick Peters",
+                    "party": "Liberal",
+                    "size": 200
+                },
+                {
+                    "name": "Alexander B. Warburton",
+                    "party": "Liberal",
+                    "size": 200
+                },
+                {
+                    "name": "Dr. William J. P. MacMillan",
+                    "party": "PC",
+                    "size": 200
+                },
+                {
+                    "name": "J. Walter Jones",
+                    "party": "Liberal",
+                    "size": 200
+                },
+                {
+                    "name": "James Lee",
+                    "party": "PC",
+                    "size": 200
+                }
+            ]
+        },
+        {
+            "name": "Taureau",
+            "children": [
+                {
+                    "name": "Sir Louis Henry Davies",
+                    "party": "Liberal",
+                    "size": 333.3333333333
+                },
+                {
+                    "name": "John A. Mathieson",
+                    "party": "PC",
+                    "size": 333.3333333333
+                },
+                {
+                    "name": "Angus MacLean",
+                    "party": "PC",
+                    "size": 333.3333333333
+                }
+            ]
+        },
+        {
+            "name": "G\u00e9meaux",
+            "children": [
+                {
+                    "name": "J.C. Pope",
+                    "party": "PC",
+                    "size": 500
+                },
+                {
+                    "name": "Alexander W. Matheson",
+                    "party": "Liberal",
+                    "size": 500
+                }
+            ]
+        },
+        {
+            "name": "Cancer",
+            "children": [
+                {
+                    "name": "Thane A. Campbell",
+                    "party": "Liberal",
+                    "size": 1000
+                }
+            ]
+        },
+        {
+            "name": "Lion",
+            "children": [
+                {
+                    "name": "Donald Farquharson",
+                    "party": "Liberal",
+                    "size": 333.3333333333
+                },
+                {
+                    "name": "Aubin-Edmond Arsenault",
+                    "party": "PC",
+                    "size": 333.3333333333
+                },
+                {
+                    "name": "Catherine Callbeck",
+                    "party": "Liberal",
+                    "size": 333.3333333333
+                }
+            ]
+        },
+        {
+            "name": "Vierge",
+            "children": [
+                {
+                    "name": "Arthur Peters",
+                    "party": "Liberal",
+                    "size": 333.3333333333
+                },
+                {
+                    "name": "H. James Palmer",
+                    "party": "Liberal",
+                    "size": 333.3333333333
+                },
+                {
+                    "name": "Bennett Campbell",
+                    "party": "Liberal",
+                    "size": 333.3333333333
+                }
+            ]
+        },
+        {
+            "name": "Balance",
+            "children": [
+                {
+                    "name": "Albert C. Saunders",
+                    "party": "Liberal",
+                    "size": 500
+                },
+                {
+                    "name": "Pat Binns",
+                    "party": "PC",
+                    "size": 500
+                }
+            ]
+        },
+        {
+            "name": "Scorpion",
+            "children": [
+                {
+                    "name": "Lemuel Cambridge Owen",
+                    "party": "PC",
+                    "size": 333.3333333333
+                },
+                {
+                    "name": "Francis Longworth Haszard",
+                    "party": "Liberal",
+                    "size": 333.3333333333
+                },
+                {
+                    "name": "Dennis King",
+                    "party": "PC",
+                    "size": 333.3333333333
+                }
+            ]
+        },
+        {
+            "name": "Sagittaire",
+            "children": [
+                {
+                    "name": "William Wilfred Sullivan",
+                    "party": "PC",
+                    "size": 166.6666666667
+                },
+                {
+                    "name": "Neil McLeod",
+                    "party": "PC",
+                    "size": 166.6666666667
+                },
+                {
+                    "name": "John Howatt Bell",
+                    "party": "Liberal",
+                    "size": 166.6666666667
+                },
+                {
+                    "name": "Walter R. Shaw",
+                    "party": "PC",
+                    "size": 166.6666666667
+                },
+                {
+                    "name": "Alexander B. Campbell ",
+                    "party": "Liberal",
+                    "size": 166.6666666667
+                },
+                {
+                    "name": "Wade MacLauchlan",
+                    "party": "Liberal",
+                    "size": 166.6666666667
+                }
+            ]
+        },
+        {
+            "name": "Capricorne",
+            "children": [
+                {
+                    "name": "James D. Stewart",
+                    "party": "PC",
+                    "size": 1000
+                }
+            ]
+        },
+        {
+            "name": "Verseau",
+            "children": [
+                {
+                    "name": "Walter Lea",
+                    "party": "Liberal",
+                    "size": 250
+                },
+                {
+                    "name": "Joe Ghiz",
+                    "party": "Liberal",
+                    "size": 250
+                },
+                {
+                    "name": "Keith Milligan",
+                    "party": "Liberal",
+                    "size": 250
+                },
+                {
+                    "name": "Robert Ghiz",
+                    "party": "Liberal",
+                    "size": 250
+                }
+            ]
+        },
+        {
+            "name": "Poissons",
+            "children": [
+                {
+                    "name": "Aucun ici!",
+                    "party": "unknown",
+                    "size": 1000
+                }
+            ]
+        }
+    ]
+}
