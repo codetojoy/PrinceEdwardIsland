@@ -38,24 +38,19 @@
                     "name": "Leo",
                     "children": [
                         {
-                            "name": "John Holl",
-                            "party": "PC",
-                            "size": 250
-                        },
-                        {
                             "name": "Donald Farquharson",
                             "party": "Liberal",
-                            "size": 250
+                            "size": 333.3333333333
                         },
                         {
                             "name": "Aubin-Edmond Arsenault",
                             "party": "PC",
-                            "size": 250
+                            "size": 333.3333333333
                         },
                         {
                             "name": "Catherine Callbeck",
                             "party": "Liberal",
-                            "size": 250
+                            "size": 333.3333333333
                         }
                     ]
                 },
@@ -63,39 +58,34 @@
                     "name": "Sagittarius",
                     "children": [
                         {
-                            "name": "Robert Poore Haythorne",
-                            "party": "Liberal",
-                            "size": 142.8571428571
-                        },
-                        {
                             "name": "William Wilfred Sullivan",
                             "party": "PC",
-                            "size": 142.8571428571
+                            "size": 166.6666666667
                         },
                         {
                             "name": "Neil McLeod",
                             "party": "PC",
-                            "size": 142.8571428571
+                            "size": 166.6666666667
                         },
                         {
                             "name": "John Howatt Bell",
                             "party": "Liberal",
-                            "size": 142.8571428571
+                            "size": 166.6666666667
                         },
                         {
                             "name": "Walter R. Shaw",
                             "party": "PC",
-                            "size": 142.8571428571
+                            "size": 166.6666666667
                         },
                         {
                             "name": "Alexander B. Campbell ",
                             "party": "Liberal",
-                            "size": 142.8571428571
+                            "size": 166.6666666667
                         },
                         {
                             "name": "Wade MacLauchlan",
                             "party": "Liberal",
-                            "size": 142.8571428571
+                            "size": 166.6666666667
                         }
                     ]
                 }
@@ -153,24 +143,14 @@
                     "name": "Gemini",
                     "children": [
                         {
-                            "name": "John Hamilton Gray",
-                            "party": "PC",
-                            "size": 250
-                        },
-                        {
                             "name": "J.C. Pope",
                             "party": "PC",
-                            "size": 250
-                        },
-                        {
-                            "name": "Joseph Hensley",
-                            "party": "Liberal",
-                            "size": 250
+                            "size": 500
                         },
                         {
                             "name": "Alexander W. Matheson",
                             "party": "Liberal",
-                            "size": 250
+                            "size": 500
                         }
                     ]
                 },
@@ -243,29 +223,19 @@
                     "name": "Virgo",
                     "children": [
                         {
-                            "name": "George Coles",
-                            "party": "Liberal",
-                            "size": 200
-                        },
-                        {
-                            "name": "Edward Palmer",
-                            "party": "PC",
-                            "size": 200
-                        },
-                        {
                             "name": "Arthur Peters",
                             "party": "Liberal",
-                            "size": 200
+                            "size": 333.3333333333
                         },
                         {
                             "name": "H. James Palmer",
                             "party": "Liberal",
-                            "size": 200
+                            "size": 333.3333333333
                         },
                         {
                             "name": "Bennett Campbell",
                             "party": "Liberal",
-                            "size": 200
+                            "size": 333.3333333333
                         }
                     ]
                 },
