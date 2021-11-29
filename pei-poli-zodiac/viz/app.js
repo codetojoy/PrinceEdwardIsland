@@ -17,52 +17,79 @@ export function hasManyChildren(d) {
 function getTextClass(d) {
   let result = "label";
 
-  if (hasManyChildren(d)) {
-    if (d.data.name && d.data.name.length >= c.NUM_CHARS_FOR_TINY_TEXT) {
+  if (isPremiersRequest()) {
+    const isLeaf = d.data.children == null;
+    if (isLeaf) {
       result = "label-tiny";
-    } else {
-      result = "label-small";
+    }
+  } else {
+    if (hasManyChildren(d)) {
+      if (d.data.name && d.data.name.length >= c.NUM_CHARS_FOR_TINY_TEXT) {
+        result = "label-tiny";
+      } else {
+        result = "label-small";
+      }
     }
   }
 
   return result;
 }
 
-var myLocation = {
+export var myLocation = {
   getCurrentURL: function () {
     return window.location.href;
   },
 };
 
-function isFrenchMode() {
-  const fileName = myLocation.getCurrentURL().split("/").slice(-1);
-  const isFrench = fileName == c.FRENCH_HTML_FILE;
-  return isFrench;
+export function getFileName() {
+  return myLocation.getCurrentURL().split("/").slice(-1)[0];
 }
 
-function getLocalizedJsonFile(jsonFile) {
-  let result = jsonFile;
-  if (isFrenchMode()) {
-    switch (jsonFile) {
-      case c.NORMAL_JSON_FILE:
-        result = c.NORMAL_JSON_FR_FILE;
-        break;
-      case c.ELEMENTS_JSON_FILE:
-        result = c.ELEMENTS_JSON_FR_FILE;
-        break;
-      default:
-        result = jsonFile;
-        break;
-    }
+export function isFrench(fileName) {
+  return fileName.includes(c.FR_QUALIFIER);
+}
+
+export function isPremiers(fileName) {
+  return fileName.includes(c.PREMIERS);
+}
+
+export function isElements(fileName) {
+  return fileName.includes(c.ELEMENTS_QUALIFIER);
+}
+
+export function isFrenchRequest() {
+  return isFrench(getFileName());
+}
+
+export function isPremiersRequest() {
+  return isPremiers(getFileName());
+}
+
+export function getJsonFile(jsonFile) {
+  const fileName = getFileName();
+  const prefix = isPremiers(fileName) ? c.NORMAL_PREMIERS_PREFIX : c.NORMAL_PREFIX;
+  const element = isElements(jsonFile) ? c.ELEMENTS_QUALIFIER : "";
+  const lang = isFrench(fileName) ? c.FR_QUALIFIER : "";
+
+  // e.g. MLAs, Signs, English       : zodiac.json
+  // e.g. Premiers, Elements, French : zodiac_premiers_elements_fr.json
+  const result = `./${prefix}${element}${lang}.json`;
+
+  const isKnownFile = c.KNOWN_JSON_FILES.includes(result);
+  if (!isKnownFile) {
+    console.log(`TRACER INTERNAL ERROR ${result}`);
+    throw "Internal error on JSON file";
   }
+
   return result;
 }
 
-function getTextForLegend(legendKey) {
-  if (isFrenchMode()) {
-    return c.LEGEND_MAP[legendKey].fr;
+export function getTextForLegend(legendKey) {
+  if (isPremiersRequest() && legendKey === c.PC_PARTY_LEGEND) {
+    // We want "Conservative/PC" legend text for "PC"
+    return isFrenchRequest() ? c.COMBO_PC_CON_PARTY_FR : c.COMBO_PC_CON_PARTY;
   } else {
-    return legendKey;
+    return isFrenchRequest() ? c.LEGEND_MAP[legendKey].fr : legendKey;
   }
 }
 
@@ -73,6 +100,14 @@ function getDeltaForLegend(legendKey) {
 function getColorForLegend(legendKey) {
   const colorMap = c.PARTY_COLOR_MAP;
   return colorMap[c.LEGEND_MAP[legendKey].code];
+}
+
+function getLegendKeys() {
+  if (isPremiersRequest()) {
+    return [c.LIBERAL_PARTY_LEGEND, c.PC_PARTY_LEGEND];
+  } else {
+    return [c.GREEN_PARTY_LEGEND, c.LIBERAL_PARTY_LEGEND, c.PC_PARTY_LEGEND];
+  }
 }
 
 // ----------
@@ -89,7 +124,7 @@ function drawHorizontalLegend() {
   let svg = d3.select("#legend");
   svg.append("rect").attr("height", "100%").attr("width", "100%").attr("fill", d3.color(c.BACKGROUND_LIGHT));
 
-  let keys = [c.GREEN_PARTY_LEGEND, c.LIBERAL_PARTY_LEGEND, c.PC_PARTY_LEGEND];
+  let keys = getLegendKeys();
 
   const firstDotX = 210;
   const firstDotY = 20;
@@ -146,7 +181,7 @@ function drawCircle(jsonFile) {
     .size([diameter - margin, diameter - margin])
     .padding(2);
 
-  d3.json(getLocalizedJsonFile(jsonFile), function (error, root) {
+  d3.json(getJsonFile(jsonFile), function (error, root) {
     if (error) throw error;
 
     root = d3

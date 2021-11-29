@@ -1,8 +1,31 @@
 export const NORMAL_JSON_FILE = "./zodiac.json";
 export const ELEMENTS_JSON_FILE = "./zodiac_elements.json";
 
+export const NORMAL_PREMIERS_JSON_FILE = "./zodiac_premiers.json";
+export const ELEMENTS_PREMIERS_JSON_FILE = "./zodiac_premiers_elements.json";
+
 export const NORMAL_JSON_FR_FILE = "./zodiac_fr.json";
 export const ELEMENTS_JSON_FR_FILE = "./zodiac_elements_fr.json";
+
+export const NORMAL_PREMIERS_JSON_FR_FILE = "./zodiac_premiers_fr.json";
+export const ELEMENTS_PREMIERS_JSON_FR_FILE = "./zodiac_premiers_elements_fr.json";
+
+export const NORMAL_PREFIX = "zodiac";
+export const NORMAL_PREMIERS_PREFIX = "zodiac_premiers";
+export const ELEMENTS_QUALIFIER = "_elements";
+export const FR_QUALIFIER = "_fr";
+export const PREMIERS = "premiers";
+
+export const KNOWN_JSON_FILES = [
+  NORMAL_JSON_FILE,
+  ELEMENTS_JSON_FILE,
+  NORMAL_PREMIERS_JSON_FILE,
+  ELEMENTS_PREMIERS_JSON_FILE,
+  NORMAL_JSON_FR_FILE,
+  ELEMENTS_JSON_FR_FILE,
+  NORMAL_PREMIERS_JSON_FR_FILE,
+  ELEMENTS_PREMIERS_JSON_FR_FILE,
+];
 
 export const FRENCH_HTML_FILE = "index_fr.html";
 
@@ -16,8 +39,11 @@ export const NDP_PARTY = "NDP";
 export const PC_PARTY = "PC";
 export const UNKNOWN_PARTY = "Unknown";
 
+export const COMBO_PC_CON_PARTY = "Conservative/PC";
+export const COMBO_PC_CON_PARTY_FR = "Conservateur/PC";
+
 export const NUM_SIBLINGS_FOR_SMALL_TEXT = 4;
-export const NUM_CHARS_FOR_TINY_TEXT = 14;
+export const NUM_CHARS_FOR_TINY_TEXT = 12;
 
 export const MODE_NORMAL = "normal";
 export const MODE_ELEMENTS = "elements";
