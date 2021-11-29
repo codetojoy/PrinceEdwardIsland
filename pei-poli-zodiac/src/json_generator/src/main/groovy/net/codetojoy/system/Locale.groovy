@@ -24,6 +24,7 @@ class Locale {
         translationMap["Capricorn"] = "Capricorne"
         translationMap["Aquarius"] = "Verseau"
         translationMap["Pisces"] = "Poissons"
+        translationMap["Unknown"] = "Inconnues"
 
         translationMap["Fire"] = "Feu"
         translationMap["Water"] = "Eau"

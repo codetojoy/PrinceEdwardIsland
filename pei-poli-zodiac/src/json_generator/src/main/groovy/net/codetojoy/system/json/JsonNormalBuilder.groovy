@@ -23,48 +23,16 @@ import net.codetojoy.system.Signs
 
 class JsonNormalBuilder extends BaseBuilder {
 
-/*
-    def getSizeForSign(def infos, def sign) {
-        def result = DEFAULT_SIZE
-        def count = infos.findAll{ it.zodiac == sign}.size()
-        result = result / count
-        return result
-    }
-
-    def buildUnknown(def locale) {
-        return ["$NAME": locale.get(NONE), "$PARTY": UNKNOWN_SIGN, "$SIZE": DEFAULT_SIZE]
-    }
-
-    def buildChildrenForSign(def infos, def displaySign, def locale) {
-        def children = infos.findResults { info ->
-            def dataSign = info.zodiac
-            def thisDisplaySign = new Signs().getDisplaySign(dataSign)
-            if (thisDisplaySign == displaySign) {
-                def person = [:]
-                person[NAME] = info.getQualifiedName()
-                person[PARTY] = info.party
-                person[SIZE] = getSizeForSign(infos, dataSign)
-                return person
-            } else {
-                return null
-            }
-        }
-        if (children.isEmpty()) {
-            children << buildUnknown(locale)
-        }
-        return children
-    }
-*/
-
     def buildChildren(def infos, def locale) {
         def children = []
         Signs.DISPLAY_SIGNS.each { sign ->
-            if (sign != Signs.UNKNOWN_DISPLAY_SIGN) {
+            // NOV 2021: Mark McLane is unknown
+            // if (sign != Signs.UNKNOWN_DISPLAY_SIGN) {
                 def childMap = [:]
                 childMap[NAME] = locale.get(sign)
                 childMap[CHILDREN] = buildChildrenForSign(infos, sign, locale)
                 children << childMap
-            }
+            // }
         }
         return children
     }

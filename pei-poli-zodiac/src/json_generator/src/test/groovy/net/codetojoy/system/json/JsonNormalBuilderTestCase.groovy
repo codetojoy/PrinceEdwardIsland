@@ -11,6 +11,9 @@ import static org.junit.Assert.*
 class JsonBuilderTestCase {
     def jsonBuilder = new JsonNormalBuilder()
 
+    def static final NUM_SIGNS = 12
+    def static final NUM_SIGNS_WITH_UNKNOWN = NUM_SIGNS + 1
+
     @Test
     void testBuildNormal() {
         def name = "Mozart"
@@ -37,7 +40,7 @@ class JsonBuilderTestCase {
         def topLevelChildren = resultMap["children"]
 
         assertEquals(resultMap["name"], "zodiac")
-        assertEquals(topLevelChildren.size(), 12)
+        assertEquals(topLevelChildren.size(), NUM_SIGNS_WITH_UNKNOWN)
 
         topLevelChildren.each { child ->
             def sign = child["name"]
@@ -83,7 +86,7 @@ class JsonBuilderTestCase {
         def topLevelChildren = resultMap["children"]
 
         assertEquals(resultMap["name"], "zodiac")
-        assertEquals(topLevelChildren.size(), 12)
+        assertEquals(topLevelChildren.size(), NUM_SIGNS_WITH_UNKNOWN)
 
         topLevelChildren.each { child ->
             def sign = child["name"]
