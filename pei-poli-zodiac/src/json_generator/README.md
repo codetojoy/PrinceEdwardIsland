@@ -5,7 +5,7 @@
 ### To Run
 
 * requires Gradle
-* execute: `./run.sh`
+* execute: `./run_mlas.sh` or `./run_premiers.sh`
 
 ### Layout
 
