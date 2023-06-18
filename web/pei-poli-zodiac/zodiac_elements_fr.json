@@ -8,8 +8,8 @@
                     "name": "B\u00e9lier",
                     "children": [
                         {
-                            "name": "Sonny Gallant",
-                            "party": "Liberal",
+                            "name": "Aucun ici!",
+                            "party": "unknown",
                             "size": 1000
                         }
                     ]
@@ -18,19 +18,9 @@
                     "name": "Lion",
                     "children": [
                         {
-                            "name": "Hannah Bell",
-                            "party": "Green",
-                            "size": 333.3333333333
-                        },
-                        {
-                            "name": "Lynne Lund",
-                            "party": "Green",
-                            "size": 333.3333333333
-                        },
-                        {
-                            "name": "Hon. Matt Mackay",
+                            "name": "Matt MacKay",
                             "party": "PC",
-                            "size": 333.3333333333
+                            "size": 1000
                         }
                     ]
                 },
@@ -53,7 +43,7 @@
                     "name": "Cancer",
                     "children": [
                         {
-                            "name": "Cory Deagle",
+                            "name": "Hon. Cory Deagle",
                             "party": "PC",
                             "size": 500
                         },
@@ -70,27 +60,22 @@
                         {
                             "name": "Hon. Ernie Hudson",
                             "party": "PC",
-                            "size": 200
+                            "size": 250
                         },
                         {
                             "name": "Hon. Dennis King",
                             "party": "PC",
-                            "size": 200
-                        },
-                        {
-                            "name": "Hon. Colin LaVie",
-                            "party": "PC",
-                            "size": 200
+                            "size": 250
                         },
                         {
                             "name": "Sidney MacEwen",
                             "party": "PC",
-                            "size": 200
+                            "size": 250
                         },
                         {
                             "name": "Hal Perry",
                             "party": "Liberal",
-                            "size": 200
+                            "size": 250
                         }
                     ]
                 },
@@ -118,12 +103,12 @@
                     "name": "G\u00e9meaux",
                     "children": [
                         {
-                            "name": "Hon. Peter Bevan-Baker",
+                            "name": "Peter Bevan-Baker",
                             "party": "Green",
                             "size": 500
                         },
                         {
-                            "name": "Hon. Jamie Fox",
+                            "name": "Jamie Fox",
                             "party": "PC",
                             "size": 500
                         }
@@ -133,19 +118,14 @@
                     "name": "Balance",
                     "children": [
                         {
-                            "name": "Stephen Howard",
-                            "party": "Green",
-                            "size": 333.3333333333
-                        },
-                        {
                             "name": "Hon. Natalie Jameson",
                             "party": "PC",
-                            "size": 333.3333333333
+                            "size": 500
                         },
                         {
                             "name": "Gordon McNeilly",
                             "party": "Liberal",
-                            "size": 333.3333333333
+                            "size": 500
                         }
                     ]
                 },
@@ -178,14 +158,9 @@
                     "name": "Vierge",
                     "children": [
                         {
-                            "name": "Trish Altass",
-                            "party": "Green",
-                            "size": 500
-                        },
-                        {
                             "name": "Karla Bernard",
                             "party": "Green",
-                            "size": 500
+                            "size": 1000
                         }
                     ]
                 },
@@ -193,24 +168,9 @@
                     "name": "Capricorne",
                     "children": [
                         {
-                            "name": "Hon. James Aylward",
+                            "name": "Brad Trivers",
                             "party": "PC",
-                            "size": 250
-                        },
-                        {
-                            "name": "Michele Beaton",
-                            "party": "Green",
-                            "size": 250
-                        },
-                        {
-                            "name": "Ole Hammarlund",
-                            "party": "Green",
-                            "size": 250
-                        },
-                        {
-                            "name": "Hon. Brad Trivers",
-                            "party": "PC",
-                            "size": 250
+                            "size": 1000
                         }
                     ]
                 }
